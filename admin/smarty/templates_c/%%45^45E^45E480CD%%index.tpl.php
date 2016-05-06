@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-06 13:06:13
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-06 20:45:21
          compiled from index.tpl */ ?>
 <!DOCTYPE html>
 <html><head>
@@ -44,6 +44,8 @@
         <![endif]-->
 
         <!--headerIncludes-->
+
+        <style type="text/css"></style></head>
     <body data-spy="scroll" data-target=".navMenuCollapse">
 
         <!--PRELOADER-->
@@ -57,34 +59,42 @@
             <nav class="navbar bg-color1 dark-bg" data-selector="nav" style="color: rgb(255, 255, 255); box-shadow: none; background-color: rgb(0, 0, 0);">
 
                 <div class="container">
-                    <div class="col-sm-2">
+                    <div class="col-sm-offset-2 col-md-offset-0 col-lg-offset-0 col-xs-12 col-sm-3 col-md-3 col-lg-2">
                         <a class="navbar-brand goto" href="" data-selector="a.btn, a.download-btn, button.btn, a.goto" style=" margin-bottom: 120px;"><img src="images/uploads/velvetlogo.png" height="25" alt="Your logo" data-selector="img" style="width: 183px; height: 180px; border-radius: 0px; border: 1px none rgb(0, 192, 255);"></a>
                     </div>
+                    
+                    
+                        <div class="col-xs-12 col-sm-6 col-md-9 col-lg-10">
 
-                    <div class="col-sm-10">
-
-                        <div class="login-panel">
+                            <div class="login-panel">
 
 
-                        </div>
-                        <ul class="nav navbar-left">
-                            <li data-selector="nav li"><a href="#" data-selector="nav a">Россия, г. Новосибирск, <span class="js-extracted-address daria-action mail-message-map-link" data-action="map-up.showAddress" data-params="address=ул. Галущака, 2&amp;ids=158188936911411307">ул. Галущака, <span class="mail-message-map-nobreak">2<span class="mail-message-map-link-icon icon" data-selector=".icon"></span></span></span></a></li>
-                            <li data-selector="nav li"><a href="#" data-selector="nav a"><span class="wmi-callto">+7 (383) 29-990-29</span><br style="color: rgb(0, 0, 0); font-family: Arial, Tahoma, Verdana, sans-serif; font-size: 12.8px; line-height: 5.8px;">
-                                    <span class="wmi-callto">+7 (983) 313-06-46</span></a></li>
+                            </div>
+                            <ul class="nav navbar-left" style="color: rgb(255, 255, 255); box-shadow: none; background-color: rgb(0, 0, 0);">
+                                <li data-selector="nav li"><a href="#" data-selector="nav a">Россия, г. Новосибирск, <span class="js-extracted-address daria-action mail-message-map-link" data-action="map-up.showAddress" data-params="address=ул. Галущака, 2&amp;ids=158188936911411307">ул. Галущака, <span class="mail-message-map-nobreak">2<span class="mail-message-map-link-icon icon" data-selector=".icon"></span></span></span></a></li>
+                                <li data-selector="nav li"><a href="#" data-selector="nav a"><span class="wmi-callto">+7 (383) 29-990-29</span><br style="color: rgb(0, 0, 0); font-family: Arial, Tahoma, Verdana, sans-serif; font-size: 12.8px; line-height: 5.8px;">
+                                        <span class="wmi-callto">+7 (983) 313-06-46</span></a></li>
 
-                            <li data-selector="nav li">
-                                <a href="https://vk.com/velvetrussia" data-vdir-href="vk.com/velvetrussia" data-orig-href="https://vk.com/velvetrussia" class="daria-goto-anchor" target="_blank" data-selector="nav a"><img src="images/vk2.png" height="20" data-selector="img"> vk.com/velvetrussia</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-10">
-                        <button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse" data-selector="Footer"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                        <div class="collapse navbar-collapse navMenuCollapse">
-                            <ul class="nav navbar-nav navbar-left">
-                                <li class="active"><a href="">Главная <span class="sr-only">(current)</span></a></li>
-                                <li><a href="#">Мастера</a></li>
-                                <li><a href="#">Партнеры</a></li>
+                                <li data-selector="nav li">
+                                    <a href="https://vk.com/velvetrussia" data-vdir-href="vk.com/velvetrussia" data-orig-href="https://vk.com/velvetrussia" class="daria-goto-anchor" target="_blank" data-selector="nav a"><img src="images/vk2.png" height="20" data-selector="img"> vk.com/velvetrussia</a></li>
                             </ul>
                         </div>
+                        <div class="col-sm-offset-2 col-md-offset-0 col-lg-offset-0 col-xs-12 col-sm-9 col-md-9 col-lg-10">
+                           <div class="col-sm-9 col-md-12 col-lg-6">
+                               <img src="images/banner.jpg" class="img-rounded" alt="banner" width="400px" style="float: left;">
+                           </div>
+                            
+                            <div class="col-xs-12 col-sm-3 col-md-12 col-lg-6 pull-down">
+                                <button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse" data-selector="Footer"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                            <div class="collapse navbar-collapse  navMenuCollapse">
+                                <ul class="nav navbar-nav navbar-left" style="color: rgb(255, 255, 255); box-shadow: none; background-color: rgb(0, 0, 0);">
+                                    <li class="active"><a href="">Главная <span class="sr-only">(current)</span></a></li>
+                                    <li><a href="#">Мастера</a></li>
+                                    <li><a href="#">Партнеры</a></li>
+                                </ul>
+                            </div>
+                            
+                        </div> 
                     </div>
                 </div>
             </nav>
@@ -121,7 +131,7 @@
                     </div>
                 </div>	
             </div>
-        </section></div><!-- /#wrap -->
+        </section><!-- /#wrap -->
 
     <!-- CONTENT CENTER BLOCK -->
     <section  class="text-center zero-bottom bg-color1 dark-bg" data-selector="section" style="padding-top: 50px; padding-bottom: 0px; border-bottom-width: 0px; border-bottom-color: rgb(255, 255, 255); background-image: none; background-attachment: scroll; background-color: rgb(0, 0, 0); background-size: auto; background-repeat: repeat;" src="images/uploads/Document-page-003.jpg">
@@ -137,7 +147,7 @@
                 </div>
             </div>	
         </div>
-    </section></div><!-- /#wrap -->
+    </section><!-- /#wrap -->
 
 <!-- CONTENT CENTER BLOCK -->
 <section  class="text-center zero-bottom bg-color1 dark-bg" data-selector="section" style="padding-top: 50px; padding-bottom: 0px; border-bottom-width: 0px; border-bottom-color: rgb(255, 255, 255); background-image: none; background-attachment: scroll; background-color: rgb(0, 0, 0); background-size: auto; background-repeat: repeat;" src="images/uploads/Document-page-004.jpg">
@@ -153,7 +163,7 @@
             </div>
         </div>	
     </div>
-</section></div><!-- /#wrap -->
+</section><!-- /#wrap -->
 
 <!-- CONTENT CENTER BLOCK -->
 <section  class="text-center zero-bottom bg-color1 dark-bg" data-selector="section" style="padding-top: 50px; padding-bottom: 0px; border-bottom-width: 0px; border-bottom-color: rgb(255, 255, 255); background-image: none; background-attachment: scroll; background-color: rgb(0, 0, 0); background-size: auto; background-repeat: repeat;" src="images/uploads/Document-page-005.jpg">
@@ -169,7 +179,7 @@
             </div>
         </div>	
     </div>
-</section></div><!-- /#wrap -->
+</section><!-- /#wrap -->
 <!-- CONTENT CENTER BLOCK -->
 <section  class="text-center zero-bottom bg-color1 dark-bg" data-selector="section" style="padding-top: 50px; padding-bottom: 0px; border-bottom-width: 0px; border-bottom-color: rgb(255, 255, 255); background-image: none; background-attachment: scroll; background-color: rgb(0, 0, 0); background-size: auto; background-repeat: repeat;" src="images/uploads/Document-page-006.jpg">
     <div class="container">
@@ -184,7 +194,7 @@
             </div>
         </div>	
     </div>
-</section></div><!-- /#wrap -->
+</section><!-- /#wrap -->
 <!-- CONTENT CENTER BLOCK -->
 <section  class="text-center zero-bottom bg-color1 dark-bg" data-selector="section" style="padding-top: 50px; padding-bottom: 0px; border-bottom-width: 0px; border-bottom-color: rgb(255, 255, 255); background-image: none; background-attachment: scroll; background-color: rgb(0, 0, 0); background-size: auto; background-repeat: repeat;" src="images/uploads/Document-page-007.jpg">
     <div class="container">
@@ -200,7 +210,7 @@
             </div>
         </div>	
     </div>
-</section></div><!-- /#wrap -->
+</section><!-- /#wrap -->
 
 
 <!-- MODALS BEGIN-->

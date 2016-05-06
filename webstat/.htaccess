@@ -1,6 +1,0 @@
-<Limit GET POST>
-	require valid-user
-</Limit>
-AuthType Basic
-AuthName "webstat"
-AuthUserFile /var/www/5ave/data/etc/velvetrussia.ru.stat.passwd
