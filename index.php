@@ -18,4 +18,12 @@ $smarty->compile_dir = ABSPATH . 'admin/smarty/templates_c';
 $smarty->cache_dir = ABSPATH . 'smarty/cache';
 $smarty->config_dir = ABSPATH . 'admin/smarty/configs';
 
-$smarty->display('index.tpl');
+$smarty->display('header.tpl');
+
+if (isset($_GET['partners'])) {
+	$smarty->display('partners.tpl');
+} elseif ($_GET['masters']) {
+	$smarty->display('masters.tpl');
+} else {
+	$smarty->display('main.tpl');
+}
