@@ -1,6 +1,6 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-06 13:23:16
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-07 18:34:25
          compiled from admin_post.tpl */ ?>
-<form class="col-md-12 col-sm-12 col-xs-12" method="POST" enctype="multipart/form-data">
+<form class="col-md-12 col-sm-12 col-xs-12" method="post" enctype="multipart/form-data">
     <div class="x_panel">
         <div class="x_title">
             <h2>Заголовок<small>для админ-панели</small></h2>
@@ -27,7 +27,7 @@
                         <?php if (! empty ( $this->_tpl_vars['post_img'] )): ?>
                             <a href="?delete=<?php echo $_GET['edit']; ?>
 " class='close'>×</a>
-                            <img src='smarty/images/posts/<?php echo $this->_tpl_vars['post_img']; ?>
+                            <img src='../images/posts/<?php echo $this->_tpl_vars['post_img']; ?>
 ' alt="...">
                         <?php else: ?>
                             <h3 style="margin:75px">Миниатюра</h3>

@@ -1,4 +1,4 @@
-<form class="col-md-12 col-sm-12 col-xs-12" method="POST" enctype="multipart/form-data">
+<form class="col-md-12 col-sm-12 col-xs-12" method="post" enctype="multipart/form-data">
     <div class="x_panel">
         <div class="x_title">
             <h2>Заголовок<small>для админ-панели</small></h2>
@@ -21,7 +21,7 @@
                     <label for="post_img" class="thumbnail">
                         {if !empty($post_img)}
                             <a href="?delete={$smarty.get.edit}" class='close'>×</a>
-                            <img src='smarty/images/posts/{$post_img}' alt="...">
+                            <img src='../images/posts/{$post_img}' alt="...">
                         {else}
                             <h3 style="margin:75px">Миниатюра</h3>
                         {/if}
