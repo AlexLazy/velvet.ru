@@ -104,37 +104,22 @@
                             {/if}
                         {/foreach}
                     {/foreach}
-                    
+
                 </div>
 
                 <!-- Masters tab -->
                 <div role="tabpanel" class="tab-pane fade" id="master">
                     <!-- CONTENT CENTER BLOCK -->
                     <section  class="master">
-                        <ul>
-                            <li>Андреев Александр Александрович</li>
-                            <li>Казань</li>
-                            <li>7 (831) 429-13-13</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                        </ul>
-                        <ul>
-                            <li>Аседова Елизавета Виталиевна</li>
-                            <li>Звенигород</li>
-                            <li>7 (831) 429-13-13</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                        </ul>
-                        <ul>
-                            <li>Валинуров Денис Юрьевич</li>
-                            <li>Звенигород</li>
-                            <li>7 (831) 429-13-13</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                        </ul>
-                        <ul>
-                            <li>Гаранян Ованес Суренович</li>
-                            <li>Екатеринбург</li>
-                            <li>7 (831) 429-13-13</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                        </ul>
+                        {foreach from=$posts_master item=v}
+                            <ul>
+                            {foreach from=$v key=k item=v1}
+                                {if $k ne 'master_id'}
+                                    <li>{$v1}</li>
+                                {/if}
+                            {/foreach}
+                            </ul>
+                        {/foreach}
                     </section>
                 </div>
 
@@ -143,30 +128,15 @@
 
                     <!-- CONTENT CENTER BLOCK -->
                     <section  class="partners">
-                        <ul>
-                            <li>Горинова</li>
-                            <li>Юлия</li>
-                            <li>Екатеринбург</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                            <li>Velvet</li>
-                            <li>Россия, г. Новосибирск, ул. Галущака, 2</li>
-                            <li>+7 (383) 29-990-29</li>
-                            <li>example@mail.com</li>
-                        </ul>
-                        <ul>
-                            <li>Ермохин</li>
-                            <li>Макар</li>
-                            <li>Дмитров</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                            <li>+7 (383) 29-990-29</li>
-                        </ul>
-                        <ul>
-                            <li>Иванов</li>
-                            <li>Павел</li>
-                            <li>Дмитров</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                            <li>example@mail.com</li>
-                        </ul>
+                        {foreach from=$posts_partner item=v}
+                            <ul>
+                            {foreach from=$v key=k item=v1}
+                                {if $k ne 'partner_id'}
+                                    <li>{$v1}</li>
+                                {/if}
+                            {/foreach}
+                            </ul>
+                        {/foreach}
                     </section>
 
                 </div>

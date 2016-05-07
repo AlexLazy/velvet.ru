@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-07 21:19:43
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-07 23:28:26
          compiled from index.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -113,13 +113,27 @@
                             <?php endif; ?>
                         <?php endforeach; endif; unset($_from); ?>
                     <?php endforeach; endif; unset($_from); ?>
-                    
+
                 </div>
 
                 <!-- Masters tab -->
                 <div role="tabpanel" class="tab-pane fade" id="master">
                     <!-- CONTENT CENTER BLOCK -->
                     <section  class="master">
+                        <?php $_from = $this->_tpl_vars['posts_master']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['v']):
+?>
+                            <ul>
+                            <?php $_from = $this->_tpl_vars['v']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['k'] => $this->_tpl_vars['v1']):
+?>
+                                <?php if ($this->_tpl_vars['k'] != 'master_id'): ?>
+                                    <li><?php echo $this->_tpl_vars['v1']; ?>
+</li>
+                                <?php endif; ?>
+                            <?php endforeach; endif; unset($_from); ?>
+                            </ul>
+                        <?php endforeach; endif; unset($_from); ?>
                         <ul>
                             <li>Андреев Александр Александрович</li>
                             <li>Казань</li>
@@ -152,6 +166,20 @@
 
                     <!-- CONTENT CENTER BLOCK -->
                     <section  class="partners">
+                        <?php $_from = $this->_tpl_vars['posts_partner']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['v']):
+?>
+                            <ul>
+                            <?php $_from = $this->_tpl_vars['v']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['k'] => $this->_tpl_vars['v1']):
+?>
+                                <?php if ($this->_tpl_vars['k'] != 'partner_id'): ?>
+                                    <li><?php echo $this->_tpl_vars['v1']; ?>
+</li>
+                                <?php endif; ?>
+                            <?php endforeach; endif; unset($_from); ?>
+                            </ul>
+                        <?php endforeach; endif; unset($_from); ?>
                         <ul>
                             <li>Горинова</li>
                             <li>Юлия</li>

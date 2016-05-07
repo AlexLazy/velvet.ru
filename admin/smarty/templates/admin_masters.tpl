@@ -20,7 +20,7 @@
                 <div class="col-xs-3">
                     <label for="post_img" class="thumbnail">
                         {if !empty($post_img)}
-                            <a href="?delete_ads={$smarty.get.edit_ads}" class='close'>×</a>
+                            <a href="?delete_masters={$smarty.get.edit}" class='close'>×</a>
                             <img src='../images/posts/{$post_img}' alt="...">
                         {else}
                             <h3 style="margin:75px">Миниатюра</h3>
@@ -30,8 +30,8 @@
             </div>
             <input id="post_img" type="file" name="post_img" class="hidden">
             <input type="submit" value="Опубликовать" id="form_submit" name="submit" class="btn btn-success">
-            {if isset($smarty.get.edit_ads)}
-                <a href="?delete_ads={$smarty.get.edit_ads}" class='btn btn-danger'>Удалить пост</a>
+            {if isset($smarty.get.edit_masters)}
+                <a href="?delete_masters={$smarty.get.edit}" class='btn btn-danger'>Удалить пост</a>
             {/if}
         </div>
     </div>
