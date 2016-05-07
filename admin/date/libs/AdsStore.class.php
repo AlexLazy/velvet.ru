@@ -107,6 +107,8 @@ class AdsStore
         self::getAllAdsFromDB();
         self::prepareForOut();
         
+        
+        $_SESSION['id'] = $this->posts;
         $smarty->display('admin_header.tpl');
         $smarty->display('admin_post.tpl');
         $smarty->display('admin_footer.tpl');

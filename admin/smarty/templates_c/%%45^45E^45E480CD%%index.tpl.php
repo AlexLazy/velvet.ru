@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-07 16:52:32
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-07 21:19:43
          compiled from index.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -82,62 +82,38 @@
                 </div>
             </nav>
         </header>
-<!-- CONTENT -->
+        <!-- CONTENT -->
         <!-- Tab panes -->
         <div class="container">
-            
+
             <div class="tab-content">
 
                 <!-- Home tab -->
                 <div role="tabpanel" class="tab-pane fade in active" id="home">
+                    <?php $_from = $this->_tpl_vars['posts_title']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['v']):
+?>
+                        <?php $_from = $this->_tpl_vars['v']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['k'] => $this->_tpl_vars['v1']):
+?>
+                            <?php if ($this->_tpl_vars['k'] == 'post_img' && $this->_tpl_vars['v1'] != ''): ?>
+                                <!-- SLIDE -->
+                                <a href="images/posts/<?php echo $this->_tpl_vars['v1']; ?>
+" class="col-sm-12 text-center slide">
+                                    <img width="849px" src="images/posts/<?php echo $this->_tpl_vars['v1']; ?>
+" class="screen" alt="screen" data-selector="img">
+                                </a>
+                            <?php endif; ?>
+                            <?php if ($this->_tpl_vars['k'] == 'post_text'): ?>
+                                <!-- DESCRIPTION -->
+                                <p class="description text-center lead">
+                                    <?php echo $this->_tpl_vars['v1']; ?>
 
-                    <!-- DESCRIPTION -->
-                    <p class="description text-center lead">
-                        Любишь инновации, любишь  быть первым в любой сфере, обожаешь удивлять своих клиентов и понимаешь  возможности неограниченных заработков с новинкой в бьюти индустрии, то не упусти шанс – пройди обучение  новой  британской услуге - РЕКОНСТРУКЦИЯ РЕСНИЦ И БРОВЕЙ VELVET FOR LASHES&BROWS!
-                    </p>
-                    <!-- DESCRIPTION -->
-                    <p class="description text-center lead">
-                        Все наши технологи, преподающие курсы и мастер-классы прошли обучение  РЕКОНСТРУКЦИИ ВЕЛЬВЕТ для ресниц и бровей  непосредственно у британских специалистов по международной программе повышения квалификации лэшмэйкеров!
-                    </p>
-                    <!-- DESCRIPTION -->
-                    <p class="description text-center lead">
-                        На территории РФ  курсы Реконструкции ресниц и бровей Вельвет  «VELVET for L&B» проводятся согласно международному формату обучения.
-                    </p>
-
-                    <!-- SLIDE -->
-                    <a href="images/slides/Document-page-001.jpg" class="col-sm-12 text-center slide">
-                        <img width="849px" src="images/slides/Document-page-001.jpg" class="screen" alt="screen" data-selector="img">
-                    </a>
-                    <!-- SLIDE -->
-                    <a href="images/slides/Document-page-002.jpg" class="col-sm-12 text-center slide"> 
-                        <img width="849px" src="images/slides/Document-page-002.jpg" class="screen" alt="screen" data-selector="img">
-                    </a>
-                    <!-- SLIDE -->
-                    <a href="images/slides/Document-page-003.jpg" class="col-sm-12 text-center slide"> 
-                        <img width="849px" src="images/slides/Document-page-003.jpg" class="screen" alt="screen" data-selector="img">
-                    </a>
-                    <!-- SLIDE -->
-                    <a href="images/slides/Document-page-004.jpg" class="col-sm-12 text-center slide"> 
-                        <img width="849px" src="images/slides/Document-page-004.jpg" class="screen" alt="screen" data-selector="img">
-                    </a>
-                    <!-- SLIDE -->
-                    <a href="images/slides/Document-page-005.jpg" class="col-sm-12 text-center slide"> 
-                        <img width="849px" src="images/slides/Document-page-005.jpg" class="screen" alt="screen" data-selector="img">
-                    </a>
-                    <!-- SLIDE -->
-                    <a href="images/slides/Document-page-006.jpg" class="col-sm-12 text-center slide"> 
-                        <img width="849px" src="images/slides/Document-page-006.jpg" class="screen" alt="screen" data-selector="img">
-                    </a>
-
-                    <!-- DESCRIPTION -->
-                    <p class="description text-center lead">
-                        Предлагаем вам присоединиться к команде международных профессионалов и стать экспертом инновационной услуги в области ухода и эстетического преображения ресниц и БРОВЕЙ VELVET FOR L&B!
-                    </p>
-                    <!-- DESCRIPTION -->
-                    <p class="description text-center lead">
-                        ВАЖНО! Наша компания – эксклюзивный представитель РЕКОНСТРУКЦИИ РЕСНИЦ И БРОВЕЙ VELVET FOR LASHES&BROWS в России! Мы сотрудничаем НАПРЯМУЮ с ЛОНДОНОМ! У нас НЕТ НАКРУТОК от столичных поставщиков! Поэтому НАШ ПРАЙС на продукт ПРЕМИУМ сегмента - МАКСИМАЛЬНО ВЫГОДЕН!
-                    </p>
-
+                                </p>
+                            <?php endif; ?>
+                        <?php endforeach; endif; unset($_from); ?>
+                    <?php endforeach; endif; unset($_from); ?>
+                    
                 </div>
 
                 <!-- Masters tab -->
@@ -205,7 +181,7 @@
                 </div>
             </div>
         </div>
-<!-- FOOTER -->
+        <!-- FOOTER -->
         <!-- JavaScript --> 
         <script src="scripts/jquery-1.11.2.min.js"></script> 
         <script src="scripts/bootstrap.min.js"></script> 
