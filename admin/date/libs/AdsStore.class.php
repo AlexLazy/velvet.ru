@@ -49,7 +49,7 @@ class AdsStore
         
         if ($id != null)
         {
-            $mysqli->query("DELETE FROM ?_masters WHERE id=?d", $id);
+            $mysqli->query("DELETE FROM ?_masters WHERE master_id=?d", $id);
             return TRUE;
         }
     }
@@ -60,7 +60,7 @@ class AdsStore
         
         if ($id != null)
         {
-            $mysqli->query("DELETE FROM ?_partners WHERE id=?d", $id);
+            $mysqli->query("DELETE FROM ?_partners WHERE partner_id=?d", $id);
             return TRUE;
         }
     }

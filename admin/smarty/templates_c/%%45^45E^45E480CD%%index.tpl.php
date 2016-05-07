@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-07 23:28:26
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-07 23:47:23
          compiled from index.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -134,30 +134,6 @@
                             <?php endforeach; endif; unset($_from); ?>
                             </ul>
                         <?php endforeach; endif; unset($_from); ?>
-                        <ul>
-                            <li>Андреев Александр Александрович</li>
-                            <li>Казань</li>
-                            <li>7 (831) 429-13-13</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                        </ul>
-                        <ul>
-                            <li>Аседова Елизавета Виталиевна</li>
-                            <li>Звенигород</li>
-                            <li>7 (831) 429-13-13</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                        </ul>
-                        <ul>
-                            <li>Валинуров Денис Юрьевич</li>
-                            <li>Звенигород</li>
-                            <li>7 (831) 429-13-13</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                        </ul>
-                        <ul>
-                            <li>Гаранян Ованес Суренович</li>
-                            <li>Екатеринбург</li>
-                            <li>7 (831) 429-13-13</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                        </ul>
                     </section>
                 </div>
 
@@ -180,30 +156,6 @@
                             <?php endforeach; endif; unset($_from); ?>
                             </ul>
                         <?php endforeach; endif; unset($_from); ?>
-                        <ul>
-                            <li>Горинова</li>
-                            <li>Юлия</li>
-                            <li>Екатеринбург</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                            <li>Velvet</li>
-                            <li>Россия, г. Новосибирск, ул. Галущака, 2</li>
-                            <li>+7 (383) 29-990-29</li>
-                            <li>example@mail.com</li>
-                        </ul>
-                        <ul>
-                            <li>Ермохин</li>
-                            <li>Макар</li>
-                            <li>Дмитров</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                            <li>+7 (383) 29-990-29</li>
-                        </ul>
-                        <ul>
-                            <li>Иванов</li>
-                            <li>Павел</li>
-                            <li>Дмитров</li>
-                            <li>ESP/FOO/I3/02/000025</li>
-                            <li>example@mail.com</li>
-                        </ul>
                     </section>
 
                 </div>
