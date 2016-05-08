@@ -60,7 +60,7 @@
                                         <ul class="nav child_menu">
                                             <li><a href="?new_master">Добавить новый</a></li>
                                                 {foreach from=$posts_master key=key item=val}
-                                                <li><a href="?edit_masters={$val.master_id}">{$val.master_fio}</a></li>
+                                                <li><a href="?edit_masters={$val.master_id}">{$val.master_title}</a></li>
                                                 {/foreach}
                                         </ul>
                                     </li>
@@ -69,7 +69,7 @@
                                         <ul class="nav child_menu">
                                             <li><a href="?new_partner">Добавить новый</a></li>
                                                 {foreach from=$posts_partner key=key item=val}
-                                                <li><a href="?edit_partners={$val.partner_id}">{$val.partner_first_name}</a></li>
+                                                <li><a href="?edit_partners={$val.partner_id}">{$val.partner_title}</a></li>
                                                 {/foreach}
                                         </ul>
                                     </li>

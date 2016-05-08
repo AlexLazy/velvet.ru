@@ -4,6 +4,7 @@
 class Masters
 {
     public $master_id = '';
+    public $master_title = '';
     public $master_fio = '';
     public $master_city = '';
     public $master_phone = '';

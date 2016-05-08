@@ -4,6 +4,7 @@
 class Partners
 {
     public $partner_id = '';
+    public $partner_title = '';
     public $partner_first_name = '';
     public $partner_last_name = '';
     public $partner_city = '';
