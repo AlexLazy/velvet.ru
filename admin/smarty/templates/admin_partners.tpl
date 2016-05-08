@@ -13,10 +13,10 @@
             <input type="text" class="form-control" value="{$partner_title}" name="partner_title" id="fld_price" style="width:20%">
         </div>
         <div class="x_content">
-            <input type="text" class="form-control" value="{$partner_first_name}" name="partner_first_name" placeholder="Имя" style="width:20%" required=""><br>
-            <input type="text" class="form-control" value="{$partner_last_name}" name="partner_last_name" placeholder="Фамилия" style="width:20%" required=""><br>
-            <input type="text" class="form-control" value="{$partner_city}" name="partner_city" placeholder="Город" style="width:20%" required=""><br>
-            <input type="text" class="form-control" value="{$partner_certificate}" name="partner_certificate" placeholder="Сертификат" style="width:20%" required=""><br>
+            <input type="text" class="form-control" value="{$partner_first_name}" name="partner_first_name" placeholder="Имя" style="width:20%" required><br>
+            <input type="text" class="form-control" value="{$partner_last_name}" name="partner_last_name" placeholder="Фамилия" style="width:20%" required><br>
+            <input type="text" class="form-control" value="{$partner_city}" name="partner_city" placeholder="Город" style="width:20%" required><br>
+            <input type="text" class="form-control" value="{$partner_certificate}" name="partner_certificate" placeholder="Сертификат" style="width:20%" required><br>
             <input type="text" class="form-control" value="{$partner_company_name}" name="partner_company_name" placeholder="Компания" style="width:20%"><br>
             <input type="text" class="form-control" value="{$partner_address}" name="partner_address" placeholder="Адрес" style="width:20%"><br>
             <input type="text" class="form-control" value="{$partner_phone}" name="partner_phone" placeholder="Телефон" style="width:20%"><br>
