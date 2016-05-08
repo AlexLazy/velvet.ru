@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!$_SESSION['check']) {
+    header('Location: login.php');
+}
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', 1);
 if ( !defined('ABSPATH') )
@@ -6,19 +10,30 @@ if ( !defined('ABSPATH') )
 require_once (ABSPATH . 'date/cfg.php');//настройки
 require_once (ABSPATH . 'date/date.php');//переменные
 
-if(isset($_POST['submit']) && is_array($_POST))
+if(isset($_POST['submit_post']) && isset($_FILES))
 {
     // Проверяем загружен ли файл
     if (is_uploaded_file($_FILES["post_img"]["tmp_name"]))
     {
         // Если файл загружен успешно, перемещаем его
         // из временной директории в конечную
-        move_uploaded_file($_FILES["post_img"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . '/admin/smarty/images/posts/' . $_FILES["post_img"]["name"]);
+        move_uploaded_file($_FILES["post_img"]["tmp_name"], '../images/posts/' . $_FILES["post_img"]["name"]);
     }
     $post = new Ads($_POST);
     $post->save();
 }
 
+if(isset($_POST['submit_master']) && isset($_FILES))
+{
+    $post = new Masters($_POST);
+    $post->save();
+}
+
+if(isset($_POST['submit_partner']) && isset($_FILES))
+{
+    $post = new Partners($_POST);
+    $post->save();
+}
 
 $posts = AdsStore::instance();
 $posts->runAdminPost();

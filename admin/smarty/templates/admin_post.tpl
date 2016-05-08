@@ -1,4 +1,4 @@
-<form class="col-md-12 col-sm-12 col-xs-12" method="POST" enctype="multipart/form-data">
+<form class="col-md-12 col-sm-12 col-xs-12" method="post" enctype="multipart/form-data">
     <div class="x_panel">
         <div class="x_title">
             <h2>Заголовок<small>для админ-панели</small></h2>
@@ -20,8 +20,8 @@
                 <div class="col-xs-3">
                     <label for="post_img" class="thumbnail">
                         {if !empty($post_img)}
-                            <a href="?delete={$smarty.get.edit}" class='close'>×</a>
-                            <img src='smarty/images/posts/{$post_img}' alt="...">
+                            <a href="?delete_ads={$smarty.get.edit_ads}" class='close'>×</a>
+                            <img src='../images/posts/{$post_img}' alt="...">
                         {else}
                             <h3 style="margin:75px">Миниатюра</h3>
                         {/if}
@@ -29,9 +29,9 @@
                 </div>
             </div>
             <input id="post_img" type="file" name="post_img" class="hidden">
-            <input type="submit" value="Опубликовать" id="form_submit" name="submit" class="btn btn-success">
-            {if isset($smarty.get.edit)}
-                <a href="?delete={$smarty.get.edit}" class='btn btn-danger'>Удалить пост</a>
+            <input type="submit" value="Опубликовать" id="form_submit" name="submit_post" class="btn btn-success">
+            {if isset($smarty.get.edit_ads)}
+                <a href="?delete_ads={$smarty.get.edit_ads}" class='btn btn-danger'>Удалить пост</a>
             {/if}
         </div>
     </div>

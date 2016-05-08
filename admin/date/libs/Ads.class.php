@@ -15,7 +15,7 @@ class Ads
         if(isset($_FILES["post_img"]["name"])) $this->post_img = $_FILES["post_img"]["name"];
         foreach ($post as $key=>$val)
         {
-            if($key == 'submit') continue;
+            if($key == 'submit_post') continue;
             $this->$key = strip_tags($val);
         }
         $this->post_date = time();

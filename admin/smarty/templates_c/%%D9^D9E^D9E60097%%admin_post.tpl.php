@@ -1,6 +1,6 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-06 13:23:16
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-08 07:22:38
          compiled from admin_post.tpl */ ?>
-<form class="col-md-12 col-sm-12 col-xs-12" method="POST" enctype="multipart/form-data">
+<form class="col-md-12 col-sm-12 col-xs-12" method="post" enctype="multipart/form-data">
     <div class="x_panel">
         <div class="x_title">
             <h2>Заголовок<small>для админ-панели</small></h2>
@@ -25,9 +25,9 @@
                 <div class="col-xs-3">
                     <label for="post_img" class="thumbnail">
                         <?php if (! empty ( $this->_tpl_vars['post_img'] )): ?>
-                            <a href="?delete=<?php echo $_GET['edit']; ?>
+                            <a href="?delete_ads=<?php echo $_GET['edit_ads']; ?>
 " class='close'>×</a>
-                            <img src='smarty/images/posts/<?php echo $this->_tpl_vars['post_img']; ?>
+                            <img src='../images/posts/<?php echo $this->_tpl_vars['post_img']; ?>
 ' alt="...">
                         <?php else: ?>
                             <h3 style="margin:75px">Миниатюра</h3>
@@ -36,9 +36,9 @@
                 </div>
             </div>
             <input id="post_img" type="file" name="post_img" class="hidden">
-            <input type="submit" value="Опубликовать" id="form_submit" name="submit" class="btn btn-success">
-            <?php if (isset ( $_GET['edit'] )): ?>
-                <a href="?delete=<?php echo $_GET['edit']; ?>
+            <input type="submit" value="Опубликовать" id="form_submit" name="submit_post" class="btn btn-success">
+            <?php if (isset ( $_GET['edit_ads'] )): ?>
+                <a href="?delete_ads=<?php echo $_GET['edit_ads']; ?>
 " class='btn btn-danger'>Удалить пост</a>
             <?php endif; ?>
         </div>
