@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-07 23:20:20
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-08 06:20:03
          compiled from admin_header.tpl */ ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +69,7 @@
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['val']):
 ?>
                                                 <li><a href="?edit_masters=<?php echo $this->_tpl_vars['val']['master_id']; ?>
-"><?php echo $this->_tpl_vars['val']['master_fio']; ?>
+"><?php echo $this->_tpl_vars['val']['master_title']; ?>
 </a></li>
                                                 <?php endforeach; endif; unset($_from); ?>
                                         </ul>
@@ -82,7 +82,7 @@
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['val']):
 ?>
                                                 <li><a href="?edit_partners=<?php echo $this->_tpl_vars['val']['partner_id']; ?>
-"><?php echo $this->_tpl_vars['val']['partner_first_name']; ?>
+"><?php echo $this->_tpl_vars['val']['partner_title']; ?>
 </a></li>
                                                 <?php endforeach; endif; unset($_from); ?>
                                         </ul>

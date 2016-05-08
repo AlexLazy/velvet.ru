@@ -13,10 +13,10 @@ class Masters
     
     public function __construct($post)
     {
-        if(isset($post['post_id'])) $this->post_id=$post['post_id'];
+        if(isset($post['master_id'])) $this->master_id=$post['master_id'];
         foreach ($post as $key=>$val)
         {
-            if($key == 'submit') continue;
+            if($key == 'submit_master') continue;
             $this->$key = strip_tags($val);
         }
     }
@@ -26,7 +26,7 @@ class Masters
         global $mysqli;
         
         $vars = get_object_vars($this);
-        $mysqli->query('REPLACE INTO ?_posts (?#) VALUES(?a)', array_keys($vars), array_values($vars));
+        $mysqli->query('REPLACE INTO ?_masters (?#) VALUES(?a)', array_keys($vars), array_values($vars));
         
         header("Location: http://" . $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']);
         exit();

@@ -113,11 +113,13 @@
                     <section  class="master">
                         {foreach from=$posts_master item=v}
                             <ul>
-                            {foreach from=$v key=k item=v1}
-                                {if $k ne 'master_id'}
-                                    <li>{$v1}</li>
-                                {/if}
-                            {/foreach}
+                                {foreach from=$v key=k item=v1}
+                                    {if $k != 'master_title'} 
+                                        {if $k ne 'master_id'}
+                                            <li>{$v1}</li>
+                                            {/if}
+                                        {/if} 
+                                {/foreach}
                             </ul>
                         {/foreach}
                     </section>
@@ -130,11 +132,13 @@
                     <section  class="partners">
                         {foreach from=$posts_partner item=v}
                             <ul>
-                            {foreach from=$v key=k item=v1}
-                                {if $k ne 'partner_id'}
-                                    <li>{$v1}</li>
-                                {/if}
-                            {/foreach}
+                                {foreach from=$v key=k item=v1}
+                                    {if $k != 'partner_title'} 
+                                        {if $k ne 'partner_id'}
+                                            <li>{$v1}</li>
+                                            {/if} 
+                                        {/if} 
+                                    {/foreach}
                             </ul>
                         {/foreach}
                     </section>

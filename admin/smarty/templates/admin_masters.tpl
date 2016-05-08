@@ -9,16 +9,16 @@
                 </li>
             </ul>
             <div class="clearfix"></div>
-            <input type="hidden" value='{$post_id}' name='post_id'>
-            <input type="text" class="form-control" value="{$master_title}" name="post_title" id="fld_price" style="width:20%">
+            <input type="hidden" value='{$master_id}' name='master_id'>
+            <input type="text" class="form-control" value="{$master_title}" name="master_title" id="fld_price" style="width:20%">
         </div>
         <div class="x_content">
-            <input type="text" class="form-control" value="{$master_fio}" name="master_fio" style="width:20%">
-            <input type="text" class="form-control" value="{$master_city}" name="master_city" style="width:20%">
-            <input type="text" class="form-control" value="{$master_phone}" name="master_phone" style="width:20%">
-            <input type="text" class="form-control" value="{$master_certificate}" name="master_certificate" style="width:20%">
+            <input type="text" class="form-control" value="{$master_fio}" name="master_fio" placeholder="ФИО" style="width:20%" required=""><br>
+            <input type="text" class="form-control" value="{$master_city}" name="master_city" placeholder="Город" style="width:20%" required=""><br>
+            <input type="text" class="form-control" value="{$master_phone}" name="master_phone" placeholder="Телефон" style="width:20%" required=""><br>
+            <input type="text" class="form-control" value="{$master_certificate}" name="master_certificate" placeholder="Сертификат" style="width:20%" required=""><br>
 
-            <input type="submit" value="Опубликовать" id="form_submit" name="submit" class="btn btn-success">
+            <input type="submit" value="Опубликовать" id="form_submit" name="submit_master" class="btn btn-success">
             {if isset($smarty.get.edit_masters)}
                 <a href="?delete_masters={$smarty.get.edit_masters}" class='btn btn-danger'>Удалить пост</a>
             {/if}

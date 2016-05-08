@@ -16,10 +16,10 @@ class Partners
     
     public function __construct($post)
     {
-        if(isset($post['post_id'])) $this->post_id=$post['post_id'];
+        if(isset($post['partner_id'])) $this->partner_id=$post['partner_id'];
         foreach ($post as $key=>$val)
         {
-            if($key == 'submit') continue;
+            if($key == 'submit_partner') continue;
             $this->$key = strip_tags($val);
         }
     }
@@ -29,7 +29,7 @@ class Partners
         global $mysqli;
         
         $vars = get_object_vars($this);
-        $mysqli->query('REPLACE INTO ?_posts (?#) VALUES(?a)', array_keys($vars), array_values($vars));
+        $mysqli->query('REPLACE INTO ?_partners (?#) VALUES(?a)', array_keys($vars), array_values($vars));
         
         header("Location: http://" . $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']);
         exit();

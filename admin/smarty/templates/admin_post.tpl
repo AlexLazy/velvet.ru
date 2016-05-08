@@ -29,7 +29,7 @@
                 </div>
             </div>
             <input id="post_img" type="file" name="post_img" class="hidden">
-            <input type="submit" value="Опубликовать" id="form_submit" name="submit" class="btn btn-success">
+            <input type="submit" value="Опубликовать" id="form_submit" name="submit_post" class="btn btn-success">
             {if isset($smarty.get.edit_ads)}
                 <a href="?delete_ads={$smarty.get.edit_ads}" class='btn btn-danger'>Удалить пост</a>
             {/if}
