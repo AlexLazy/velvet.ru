@@ -10,7 +10,7 @@
             </ul>
             <div class="clearfix"></div>
             <input type="hidden" value='{$partner_id}' name='partner_id'>
-            <input type="text" class="form-control" value="{$partner_title}" name="partner_title" id="fld_price" style="width:20%">
+            <input type="text" class="form-control" value="{$partner_title}" name="partner_title" id="fld_price" style="width:20%" required>
         </div>
         <div class="x_content">
             <input type="text" class="form-control" value="{$partner_first_name}" name="partner_first_name" placeholder="Имя" style="width:20%" required><br>

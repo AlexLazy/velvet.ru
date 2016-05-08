@@ -10,7 +10,7 @@
             </ul>
             <div class="clearfix"></div>
             <input type="hidden" value='{$post_id}' name='post_id'>
-            <input type="text" class="form-control" value="{$post_title}" name="post_title" id="fld_price" style="width:20%">
+            <input type="text" class="form-control" value="{$post_title}" name="post_title" id="fld_price" style="width:20%" required>
         </div>
         <div class="x_content">
             
