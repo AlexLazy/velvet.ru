@@ -274,8 +274,19 @@ if (typeof NProgress != 'undefined') {
             $('#fake_post_img').remove();
             $('#file').html('<input id="post_img" type="file" name="post_img" class="hidden">');
             $("#post_img").on("change", function () {
-                var src = this.files[0].name;
-                $(".thumbnail").html("<img src='../images/posts/"+src+"' alt='img'>");
+                $(".thumbnail").html("<img id='prev' src=' '>");
+                var file = this.files[0];
+                preview = document.querySelector('#prev');
+                var reader  = new FileReader();
+
+                reader.onloadend = function () {
+                    preview.src = reader.result;
+                  }
+                  if (file) {
+                    reader.readAsDataURL(file);
+                  } else {
+                    preview.src = "";
+                  }
             });
         });
 
