@@ -4,6 +4,7 @@
 class Masters
 {
     public $master_id = '';
+    public $date = '';
     public $master_title = '';
     public $master_fio = '';
     public $master_city = '';
@@ -19,6 +20,7 @@ class Masters
             if($key == 'submit_master') continue;
             $this->$key = strip_tags($val);
         }
+        $this->date = date("Y-m-d H:i:s");
     }
     
     public function save()

@@ -8,7 +8,6 @@ ini_set('display_errors', 1);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 require_once (ABSPATH . 'date/cfg.php');//настройки
-require_once (ABSPATH . 'date/date.php');//переменные
 
 if(isset($_POST['submit_post']) && isset($_FILES))
 {
@@ -23,13 +22,13 @@ if(isset($_POST['submit_post']) && isset($_FILES))
     $post->save();
 }
 
-if(isset($_POST['submit_master']) && isset($_FILES))
+if(isset($_POST['submit_master']))
 {
     $post = new Masters($_POST);
     $post->save();
 }
 
-if(isset($_POST['submit_partner']) && isset($_FILES))
+if(isset($_POST['submit_partner']))
 {
     $post = new Partners($_POST);
     $post->save();

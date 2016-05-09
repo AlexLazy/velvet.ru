@@ -4,6 +4,7 @@
 class Partners
 {
     public $partner_id = '';
+    public $date = '';
     public $partner_title = '';
     public $partner_first_name = '';
     public $partner_last_name = '';
@@ -22,6 +23,7 @@ class Partners
             if($key == 'submit_partner') continue;
             $this->$key = strip_tags($val);
         }
+        $this->date = date("Y-m-d H:i:s");
     }
     
     public function save()

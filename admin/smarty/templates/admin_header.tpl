@@ -24,7 +24,7 @@
                 <div class="col-md-3 left_col">
                     <div class="left_col scroll-view">
                         <div class="navbar nav_title" style="border: 0;">
-                            <a href="../index.php" class="site_title"><i class="fa fa-paw"></i> <span>На главную</span></a>
+                            <a href="../index.php" class="site_title" target='_blank'><i class="fa fa-paw"></i> <span>На главную</span></a>
                         </div>
 
                         <div class="clearfix"></div>
@@ -52,7 +52,7 @@
                                         <ul class="nav child_menu">
                                             <li><a href="?new_post">Добавить новый</a></li>
                                                 {foreach from=$posts_title key=key item=val}
-                                                <li><a href="?edit_ads={$val.post_id}">{$val.post_title}</a></li>
+                                                <li><a href="?edit_ads={$val.post_id}">{$val.post_position}-{$val.post_title}</a></li>
                                                 {/foreach}
                                         </ul>
                                     </li>

@@ -268,4 +268,22 @@ if (typeof NProgress != 'undefined') {
     // smartresize 
     jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
+    // thumbnail
+    $(document).ready(function() {
+        $(".thumbnail").on("click", function () {
+            $('#fake_post_img').remove();
+            $('#file').html('<input id="post_img" type="file" name="post_img" class="hidden">');
+            $("#post_img").on("change", function () {
+                var src = this.files[0].name;
+                $(".thumbnail").html("<img src='../images/posts/"+src+"' alt='img'>");
+            });
+        });
+
+        $(".close").on("click", function () {
+            $('#post_img').remove();
+            $('#file').html('<input id="post_img" type="file" name="post_img" class="hidden">');
+            $('.thumbnail, .close, .miniature').fadeOut();
+        });
+    });
+
 })(jQuery,'smartresize');

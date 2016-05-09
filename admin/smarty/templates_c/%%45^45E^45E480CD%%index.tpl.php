@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-08 06:55:28
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-09 11:08:27
          compiled from index.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -113,7 +113,6 @@
                             <?php endif; ?>
                         <?php endforeach; endif; unset($_from); ?>
                     <?php endforeach; endif; unset($_from); ?>
-
                 </div>
 
                 <!-- Masters tab -->
@@ -127,12 +126,18 @@
                                 <?php $_from = $this->_tpl_vars['v']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['k'] => $this->_tpl_vars['v1']):
 ?>
-                                    <?php if ($this->_tpl_vars['k'] != 'master_title'): ?> 
+                                    <?php if ($this->_tpl_vars['k'] != 'master_title' && $this->_tpl_vars['k'] != 'date'): ?> 
                                         <?php if ($this->_tpl_vars['k'] != 'master_id'): ?>
-                                            <li><?php echo $this->_tpl_vars['v1']; ?>
+                                            <?php if ($this->_tpl_vars['k'] != 'master_mail'): ?>
+                                                <li><?php echo $this->_tpl_vars['v1']; ?>
 </li>
-                                            <?php endif; ?>
-                                        <?php endif; ?> 
+                                            <?php else: ?>
+                                                <li><a href="mailto:<?php echo $this->_tpl_vars['v1']; ?>
+"><?php echo $this->_tpl_vars['v1']; ?>
+</a></li>
+                                            <?php endif; ?> 
+                                        <?php endif; ?>
+                                    <?php endif; ?> 
                                 <?php endforeach; endif; unset($_from); ?>
                             </ul>
                         <?php endforeach; endif; unset($_from); ?>
@@ -151,13 +156,19 @@
                                 <?php $_from = $this->_tpl_vars['v']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['k'] => $this->_tpl_vars['v1']):
 ?>
-                                    <?php if ($this->_tpl_vars['k'] != 'partner_title'): ?> 
+                                    <?php if ($this->_tpl_vars['k'] != 'partner_title' && $this->_tpl_vars['k'] != 'date'): ?> 
                                         <?php if ($this->_tpl_vars['k'] != 'partner_id'): ?>
-                                            <li><?php echo $this->_tpl_vars['v1']; ?>
+                                            <?php if ($this->_tpl_vars['k'] != 'partner_mail'): ?>
+                                                <li><?php echo $this->_tpl_vars['v1']; ?>
 </li>
+                                            <?php else: ?>
+                                                <li><a href="mailto:<?php echo $this->_tpl_vars['v1']; ?>
+"><?php echo $this->_tpl_vars['v1']; ?>
+</a></li>
                                             <?php endif; ?> 
                                         <?php endif; ?> 
-                                    <?php endforeach; endif; unset($_from); ?>
+                                    <?php endif; ?> 
+                                <?php endforeach; endif; unset($_from); ?>
                             </ul>
                         <?php endforeach; endif; unset($_from); ?>
                     </section>

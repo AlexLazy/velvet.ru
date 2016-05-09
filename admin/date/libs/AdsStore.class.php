@@ -38,6 +38,7 @@ class AdsStore
         
         if ($id != null)
         {
+            unset($this->posts[$id]);
             $mysqli->query("DELETE FROM ?_posts WHERE post_id=?d", $id);
             return TRUE;
         }
@@ -49,6 +50,7 @@ class AdsStore
         
         if ($id != null)
         {
+            unset($this->masters[$id]);
             $mysqli->query("DELETE FROM ?_masters WHERE master_id=?d", $id);
             return TRUE;
         }
@@ -60,25 +62,9 @@ class AdsStore
         
         if ($id != null)
         {
+            unset($this->partners[$id]);
             $mysqli->query("DELETE FROM ?_partners WHERE partner_id=?d", $id);
             return TRUE;
-        }
-    }
-    
-    function errorHandler(Ads $ad, $error = null)
-    {
-        global $smarty;
-        
-        foreach ($ad->getObjVars() as $key => $value)//Зелёный цвет заполненным полям
-        {
-            $smarty->assign($key, $value);
-            if(strlen($value)) $smarty->assign('input_'.$key, 'has-success');
-        }
-        
-        foreach ($error as $value)//Вывод сообщения полям из массива ошибок
-        {
-            $smarty->assign('error_'.$value, 'show');
-            $smarty->assign('input_'.$value, 'has-error');
         }
     }
 
@@ -86,7 +72,7 @@ class AdsStore
     {
         global $mysqli;
         
-        $all = $mysqli->select("SELECT * FROM ?_posts");
+        $all = $mysqli->select("SELECT * FROM ?_posts ORDER BY `post_position`");
         $masters = $mysqli->select("SELECT * FROM ?_masters");
         $partners = $mysqli->select("SELECT * FROM ?_partners");
         
@@ -129,16 +115,16 @@ class AdsStore
     {
         global $smarty;
         
-        if (filter_input(INPUT_GET, 'ads', FILTER_VALIDATE_INT) > 0 || filter_input(INPUT_GET, 'edit_ads', FILTER_VALIDATE_INT) > 0)//Во время просмотра/редактирования
+        if (filter_input(INPUT_GET, 'edit_ads', FILTER_VALIDATE_INT) > 0)//Во время просмотра/редактирования
         {
-            if ((isset($_GET['ads'])) || (isset($_GET['edit_ads']) && empty($this->posts[$_GET['edit_ads']])))
+            if (isset($_GET['edit_ads']) && empty($this->posts[$_GET['edit_ads']]))
             {
                 echo "Объявление отсутствует <a href='index.php'>назад</a>";
                 exit;
             }
             else
             {
-                (isset($_GET['ads'])) ? $fillAds = $this->ads[$_GET['ads']] : $fillAds = $this->posts[$_GET['edit_ads']];
+                $fillAds = $this->posts[$_GET['edit_ads']];
                 foreach ($fillAds->getObjVars() as $key => $value)//Заполнение полей формы
                 {
                     $smarty->assign($key, $value);
@@ -146,16 +132,16 @@ class AdsStore
             }
         }
         
-        if (filter_input(INPUT_GET, 'masters', FILTER_VALIDATE_INT) > 0 || filter_input(INPUT_GET, 'edit_masters', FILTER_VALIDATE_INT) > 0)//Во время просмотра/редактирования
+        if (filter_input(INPUT_GET, 'edit_masters', FILTER_VALIDATE_INT) > 0)//Во время просмотра/редактирования
         {
-            if ((isset($_GET['masters'])) || (isset($_GET['edit_masters']) && empty($this->masters[$_GET['edit_masters']])))
+            if (isset($_GET['edit_masters']) && empty($this->masters[$_GET['edit_masters']]))
             {
                 echo "Объявление отсутствует <a href='index.php'>назад</a>";
                 exit;
             }
             else
             {
-                (isset($_GET['masters'])) ? $fillAds = $this->ads[$_GET['ads']] : $fillAds = $this->masters[$_GET['edit_masters']];
+                $fillAds = $this->masters[$_GET['edit_masters']];
                 foreach ($fillAds->getObjVars() as $key => $value)//Заполнение полей формы
                 {
                     $smarty->assign($key, $value);
@@ -163,16 +149,16 @@ class AdsStore
             }
         }
         
-        if (filter_input(INPUT_GET, 'partners', FILTER_VALIDATE_INT) > 0 || filter_input(INPUT_GET, 'edit_partners', FILTER_VALIDATE_INT) > 0)//Во время просмотра/редактирования
+        if (filter_input(INPUT_GET, 'edit_partners', FILTER_VALIDATE_INT) > 0)//Во время просмотра/редактирования
         {
-            if ((isset($_GET['partners'])) || (isset($_GET['edit_partners']) && empty($this->partners[$_GET['edit_partners']])))
+            if (isset($_GET['edit_partners']) && empty($this->partners[$_GET['edit_partners']]))
             {
                 echo "Объявление отсутствует <a href='index.php'>назад</a>";
                 exit;
             }
             else
             {
-                (isset($_GET['partners'])) ? $fillAds = $this->ads[$_GET['ads']] : $fillAds = $this->partners[$_GET['edit_partners']];
+                $fillAds = $this->partners[$_GET['edit_partners']];
                 foreach ($fillAds->getObjVars() as $key => $value)//Заполнение полей формы
                 {
                     $smarty->assign($key, $value);
@@ -219,8 +205,7 @@ class AdsStore
 
         self::getAllAdsFromDB();
         self::prepareForOut();
-        
-        
+
         $smarty->display('admin_header.tpl');
         
         if (isset($_GET['new_post'])|| isset($_GET['edit_ads'])) {

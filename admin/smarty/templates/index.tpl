@@ -104,7 +104,6 @@
                             {/if}
                         {/foreach}
                     {/foreach}
-
                 </div>
 
                 <!-- Masters tab -->
@@ -114,11 +113,15 @@
                         {foreach from=$posts_master item=v}
                             <ul>
                                 {foreach from=$v key=k item=v1}
-                                    {if $k != 'master_title'} 
+                                    {if $k != 'master_title' && $k != 'date'} 
                                         {if $k ne 'master_id'}
-                                            <li>{$v1}</li>
-                                            {/if}
-                                        {/if} 
+                                            {if $k ne 'master_mail'}
+                                                <li>{$v1}</li>
+                                            {else}
+                                                <li><a href="mailto:{$v1}">{$v1}</a></li>
+                                            {/if} 
+                                        {/if}
+                                    {/if} 
                                 {/foreach}
                             </ul>
                         {/foreach}
@@ -133,12 +136,16 @@
                         {foreach from=$posts_partner item=v}
                             <ul>
                                 {foreach from=$v key=k item=v1}
-                                    {if $k != 'partner_title'} 
+                                    {if $k != 'partner_title' && $k != 'date'} 
                                         {if $k ne 'partner_id'}
-                                            <li>{$v1}</li>
+                                            {if $k ne 'partner_mail'}
+                                                <li>{$v1}</li>
+                                            {else}
+                                                <li><a href="mailto:{$v1}">{$v1}</a></li>
                                             {/if} 
                                         {/if} 
-                                    {/foreach}
+                                    {/if} 
+                                {/foreach}
                             </ul>
                         {/foreach}
                     </section>

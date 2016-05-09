@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (isset($_POST['submit'])) {
-	
-	if ($_POST['user'] == 'admin' && $_POST['pass'] == '1234') {
+	require_once ('date/sql.cfg.php');
+	if ($_POST['username'] == $username && $_POST['password'] == $password) {
 		$_SESSION['check'] = true;
 		header('Location: index.php');
 	}
@@ -36,10 +36,10 @@ if (isset($_POST['submit'])) {
             <form method="post">
               <h1>Форма входа</h1>
               <div>
-                <input type="text" name="user" class="form-control" placeholder="Username" required="" />
+                <input type="text" name="username" class="form-control" placeholder="Username" required="" />
               </div>
               <div>
-                <input type="password" name="pass" class="form-control" placeholder="Password" required="" />
+                <input type="password" name="password" class="form-control" placeholder="Password" />
               </div>
               <div>
               <input type="submit" value="Войти" id="form_submit" name="submit" class="btn btn-default submit">

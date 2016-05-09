@@ -4,10 +4,11 @@
 class Ads
 {
     public $post_id;
-    public $post_date;
+    public $date;
     public $post_title;
     public $post_text;
     public $post_img;
+    public $post_position;
     
     public function __construct($post)
     {
@@ -18,13 +19,13 @@ class Ads
             if($key == 'submit_post') continue;
             $this->$key = strip_tags($val);
         }
-        $this->post_date = time();
+        $this->date = date("Y-m-d H:i:s");
     }
     
     public function save()
     {
         global $mysqli;
-        
+
         $vars = get_object_vars($this);
         $mysqli->query('REPLACE INTO ?_posts (?#) VALUES(?a)', array_keys($vars), array_values($vars));
         
@@ -35,18 +36,6 @@ class Ads
     public function getId()
     {
         return $this->post_id;
-    }
-    public function getDate()
-    {
-        return $this->post_date;
-    }
-    public function getText()
-    {
-        return $this->post_text;
-    }
-    public function getImg()
-    {
-        return $this->post_img_src;
     }
     public function getObjVars()
     {

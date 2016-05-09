@@ -17,7 +17,6 @@ $smarty->config_dir = 'admin/smarty/configs';
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/admin/');
 require_once (ABSPATH . 'date/cfg.php');//настройки
-require_once (ABSPATH . 'date/date.php');//переменные
 
 $posts = AdsStore::instance();
 $posts->getAllAdsFromDB();

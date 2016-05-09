@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-08 11:51:13
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-09 11:10:46
          compiled from admin_header.tpl */ ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@
                 <div class="col-md-3 left_col">
                     <div class="left_col scroll-view">
                         <div class="navbar nav_title" style="border: 0;">
-                            <a href="../index.php" class="site_title"><i class="fa fa-paw"></i> <span>На главную</span></a>
+                            <a href="../index.php" class="site_title" target='_blank'><i class="fa fa-paw"></i> <span>На главную</span></a>
                         </div>
 
                         <div class="clearfix"></div>
@@ -57,7 +57,8 @@
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['val']):
 ?>
                                                 <li><a href="?edit_ads=<?php echo $this->_tpl_vars['val']['post_id']; ?>
-"><?php echo $this->_tpl_vars['val']['post_title']; ?>
+"><?php echo $this->_tpl_vars['val']['post_position']; ?>
+-<?php echo $this->_tpl_vars['val']['post_title']; ?>
 </a></li>
                                                 <?php endforeach; endif; unset($_from); ?>
                                         </ul>
