@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-09 11:13:16
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-09 16:02:09
          compiled from admin_post.tpl */ ?>
 <form class="col-md-12 col-sm-12 col-xs-12" method="post" enctype="multipart/form-data">
     <div class="x_panel">
@@ -15,9 +15,6 @@
 ' name='post_id'>
             <input type="text" class="form-control" value="<?php echo $this->_tpl_vars['post_title']; ?>
 " name="post_title" id="fld_price" style="width:20%" required>
-            <small>Позиция поста</small>
-            <input type="text" class="form-control" value="<?php echo $this->_tpl_vars['post_position']; ?>
-" name="post_position" id="fld_pricee" style="width:50px" required>
         </div>
         <div class="x_content">
             <textarea name="post_text" id="editor" style="width:100%;margin-bottom:20px"><?php echo $this->_tpl_vars['post_text']; ?>

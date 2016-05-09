@@ -72,7 +72,7 @@ class AdsStore
     {
         global $mysqli;
         
-        $all = $mysqli->select("SELECT * FROM ?_posts ORDER BY `post_position`");
+        $all = $mysqli->select("SELECT * FROM ?_posts");
         $masters = $mysqli->select("SELECT * FROM ?_masters");
         $partners = $mysqli->select("SELECT * FROM ?_partners");
         
@@ -214,6 +214,8 @@ class AdsStore
             $smarty->display('admin_masters.tpl');
         } elseif (isset($_GET['new_partner'])|| isset($_GET['edit_partners'])) {
             $smarty->display('admin_partners.tpl');
+        } elseif (isset($_GET['partner_position']) || isset($_GET['master_position']) || isset($_GET['post_position']))  {
+            $smarty->display('admin_positions.tpl');
         } else {
             $smarty->display('admin_main.tpl');
         }

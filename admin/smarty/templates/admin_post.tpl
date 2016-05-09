@@ -11,8 +11,6 @@
             <div class="clearfix"></div>
             <input type="hidden" value='{$post_id}' name='post_id'>
             <input type="text" class="form-control" value="{$post_title}" name="post_title" id="fld_price" style="width:20%" required>
-            <small>Позиция поста</small>
-            <input type="text" class="form-control" value="{$post_position}" name="post_position" id="fld_pricee" style="width:50px" required>
         </div>
         <div class="x_content">
             <textarea name="post_text" id="editor" style="width:100%;margin-bottom:20px">{$post_text}</textarea>

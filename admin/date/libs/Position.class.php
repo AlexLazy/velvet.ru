@@ -1,13 +1,10 @@
 <?php
 
-//Родительский класс объявления
-class Ads
+class Positions
 {
-    public $post_id;
-    public $date;
-    public $post_title;
-    public $post_text;
-    public $post_img;
+    public $masters_position;
+    public $partners_pisition;
+    public $post_position;
     
     public function __construct($post)
     {
