@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10.10
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Май 09 2016 г., 11:14
--- Версия сервера: 5.5.45
--- Версия PHP: 5.4.44
+-- Хост: 127.0.0.1
+-- Время создания: Май 09 2016 г., 20:38
+-- Версия сервера: 10.1.13-MariaDB
+-- Версия PHP: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- База данных: `velvet`
@@ -26,17 +26,16 @@ SET time_zone = "+00:00";
 -- Структура таблицы `vl_masters`
 --
 
-CREATE TABLE IF NOT EXISTS `vl_masters` (
-  `master_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `vl_masters` (
+  `master_id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `master_title` varchar(100) NOT NULL,
   `master_fio` varchar(255) NOT NULL,
   `master_city` varchar(100) NOT NULL,
   `master_phone` varchar(50) NOT NULL,
   `master_mail` varchar(50) NOT NULL,
-  `master_certificate` varchar(100) NOT NULL,
-  PRIMARY KEY (`master_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `master_certificate` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `vl_masters`
@@ -54,8 +53,8 @@ INSERT INTO `vl_masters` (`master_id`, `date`, `master_title`, `master_fio`, `ma
 -- Структура таблицы `vl_partners`
 --
 
-CREATE TABLE IF NOT EXISTS `vl_partners` (
-  `partner_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `vl_partners` (
+  `partner_id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `partner_title` varchar(100) NOT NULL,
   `partner_first_name` varchar(100) NOT NULL,
@@ -65,9 +64,8 @@ CREATE TABLE IF NOT EXISTS `vl_partners` (
   `partner_company_name` varchar(255) NOT NULL,
   `partner_address` text NOT NULL,
   `partner_phone` varchar(50) NOT NULL,
-  `partner_mail` varchar(100) NOT NULL,
-  PRIMARY KEY (`partner_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `partner_mail` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `vl_partners`
@@ -84,34 +82,72 @@ INSERT INTO `vl_partners` (`partner_id`, `date`, `partner_title`, `partner_first
 -- Структура таблицы `vl_posts`
 --
 
-CREATE TABLE IF NOT EXISTS `vl_posts` (
-  `post_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `vl_posts` (
+  `post_id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `post_title` varchar(255) CHARACTER SET utf8 NOT NULL,
   `post_text` text CHARACTER SET utf8 NOT NULL,
-  `post_img` text CHARACTER SET utf8 NOT NULL,
-  `post_position` int(20) NOT NULL,
-  PRIMARY KEY (`post_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=92 ;
+  `post_img` text CHARACTER SET utf8 NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `vl_posts`
 --
 
-INSERT INTO `vl_posts` (`post_id`, `date`, `post_title`, `post_text`, `post_img`, `post_position`) VALUES
-(69, '2016-05-04 00:00:00', 'top-desk-1', 'Любишь инновации, любишь  быть первым в любой сфере, обожаешь удивлять своих клиентов и понимаешь  возможности неограниченных заработков с новинкой в бьюти индустрии, то не упусти шанс – пройди обучение  новой  британской услуге - РЕКОНСТРУКЦИЯ РЕСНИЦ И БРОВЕЙ VELVET FOR LASHES&BROWS!', '', 5),
-(70, '2016-05-09 00:00:00', 'top-desk-2', 'Все наши технологи, преподающие курсы и мастер-классы прошли обучение  РЕКОНСТРУКЦИИ ВЕЛЬВЕТ для ресниц и бровей  непосредственно у британских специалистов по международной программе повышения квалификации лэшмэйкеров!', '', 12),
-(71, '2016-05-04 00:00:00', 'top-desk-3', 'На территории РФ  курсы Реконструкции ресниц и бровей Вельвет  «VELVET for L&B» проводятся согласно международному формату обучения.\r\n', '', 11),
-(81, '2016-05-02 00:00:00', 'img-1', '', 'Document-page-001.jpg', 10),
-(82, '2016-05-05 00:00:00', 'img-2', '', 'Document-page-002.jpg', 1),
-(83, '2016-05-02 00:00:00', 'img-3', '', 'Document-page-003.jpg', 9),
-(84, '2016-05-01 00:00:00', 'img-4', '', 'Document-page-004.jpg', 8),
-(85, '2016-05-03 00:00:00', 'img-5', '', 'Document-page-005.jpg', 6),
-(86, '2016-05-10 00:00:00', 'img-6', '', 'Document-page-006.jpg', 2),
-(87, '2016-05-09 00:00:00', 'img-7', '', 'Document-page-007.jpg', 3),
-(88, '2016-05-09 11:14:09', 'down-desk-1', 'Предлагаем вам присоединиться к команде международных профессионалов и стать экспертом инновационной услуги в области ухода и эстетического преображения ресниц и БРОВЕЙ VELVET FOR L&B!\r\n', '', 0),
-(89, '2016-05-17 00:00:00', 'down-desk-2', 'ВАЖНО! Наша компания – эксклюзивный представитель РЕКОНСТРУКЦИИ РЕСНИЦ И БРОВЕЙ VELVET FOR LASHES&BROWS в России! Мы сотрудничаем НАПРЯМУЮ с ЛОНДОНОМ! У нас НЕТ НАКРУТОК от столичных поставщиков! Поэтому НАШ ПРАЙС на продукт ПРЕМИУМ сегмента - МАКСИМАЛЬНО ВЫГОДЕН!\r\n', '', 7);
+INSERT INTO `vl_posts` (`post_id`, `date`, `post_title`, `post_text`, `post_img`) VALUES
+(70, '2016-05-09 00:00:00', 'top-desk-2', 'Все наши технологи, преподающие курсы и мастер-классы прошли обучение  РЕКОНСТРУКЦИИ ВЕЛЬВЕТ для ресниц и бровей  непосредственно у британских специалистов по международной программе повышения квалификации лэшмэйкеров!', ''),
+(71, '2016-05-04 00:00:00', 'top-desk-3', 'На территории РФ  курсы Реконструкции ресниц и бровей Вельвет  «VELVET for L&B» проводятся согласно международному формату обучения.\r\n', ''),
+(80, '2016-05-02 00:00:00', 'img-1', '', 'Document-page-001.jpg'),
+(82, '2016-05-05 00:00:00', 'img-2', '', 'Document-page-002.jpg'),
+(83, '2016-05-02 00:00:00', 'img-3', '', 'Document-page-003.jpg'),
+(84, '2016-05-01 00:00:00', 'img-4', '', 'Document-page-004.jpg'),
+(85, '2016-05-03 00:00:00', 'img-5', '', 'Document-page-005.jpg'),
+(86, '2016-05-10 00:00:00', 'img-6', '', 'Document-page-006.jpg'),
+(87, '2016-05-09 00:00:00', 'img-7', '', 'Document-page-007.jpg'),
+(88, '2016-05-09 11:14:09', 'down-desk-1', 'Предлагаем вам присоединиться к команде международных профессионалов и стать экспертом инновационной услуги в области ухода и эстетического преображения ресниц и БРОВЕЙ VELVET FOR L&B!\r\n', ''),
+(89, '2016-05-17 00:00:00', 'down-desk-2', 'ВАЖНО! Наша компания – эксклюзивный представитель РЕКОНСТРУКЦИИ РЕСНИЦ И БРОВЕЙ VELVET FOR LASHES&BROWS в России! Мы сотрудничаем НАПРЯМУЮ с ЛОНДОНОМ! У нас НЕТ НАКРУТОК от столичных поставщиков! Поэтому НАШ ПРАЙС на продукт ПРЕМИУМ сегмента - МАКСИМАЛЬНО ВЫГОДЕН!\r\n', '');
 
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `vl_masters`
+--
+ALTER TABLE `vl_masters`
+  ADD PRIMARY KEY (`master_id`);
+
+--
+-- Индексы таблицы `vl_partners`
+--
+ALTER TABLE `vl_partners`
+  ADD PRIMARY KEY (`partner_id`);
+
+--
+-- Индексы таблицы `vl_posts`
+--
+ALTER TABLE `vl_posts`
+  ADD PRIMARY KEY (`post_id`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `vl_masters`
+--
+ALTER TABLE `vl_masters`
+  MODIFY `master_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT для таблицы `vl_partners`
+--
+ALTER TABLE `vl_partners`
+  MODIFY `partner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT для таблицы `vl_posts`
+--
+ALTER TABLE `vl_posts`
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100000000;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-09 15:57:55
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-09 17:10:05
          compiled from admin_header.tpl */ ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +53,7 @@
                                     <li><a><i class="fa fa-align-right"></i> Посты <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="?new_post">Добавить новый</a></li>
-                                            <li><a href="?post_position">Изменить позицию</a></li>
+                                            <li><a href="?posts_position">Изменить позицию</a></li>
                                                 <?php $_from = $this->_tpl_vars['posts_title']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['val']):
 ?>
@@ -67,7 +67,7 @@
                                     <li><a><i class="fa fa-users"></i> Мастера <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="?new_master">Добавить новый</a></li>
-                                            <li><a href="?master_position">Изменить позицию</a></li>
+                                            <li><a href="?masters_position">Изменить позицию</a></li>
                                                 <?php $_from = $this->_tpl_vars['posts_master']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['val']):
 ?>
@@ -81,7 +81,7 @@
                                     <li><a><i class="fa fa-female"></i> Партнеры <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="?new_partner">Добавить новый</a></li>
-                                            <li><a href="?partner_position">Изменить позицию</a></li>
+                                            <li><a href="?partners_position">Изменить позицию</a></li>
                                                 <?php $_from = $this->_tpl_vars['posts_partner']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['key'] => $this->_tpl_vars['val']):
 ?>

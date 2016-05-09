@@ -51,7 +51,7 @@
                                     <li><a><i class="fa fa-align-right"></i> Посты <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="?new_post">Добавить новый</a></li>
-                                            <li><a href="?post_position">Изменить позицию</a></li>
+                                            <li><a href="?posts_position">Изменить позицию</a></li>
                                                 {foreach from=$posts_title key=key item=val}
                                                 <li><a href="?edit_ads={$val.post_id}">{$val.post_position}-{$val.post_title}</a></li>
                                                 {/foreach}
@@ -60,7 +60,7 @@
                                     <li><a><i class="fa fa-users"></i> Мастера <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="?new_master">Добавить новый</a></li>
-                                            <li><a href="?master_position">Изменить позицию</a></li>
+                                            <li><a href="?masters_position">Изменить позицию</a></li>
                                                 {foreach from=$posts_master key=key item=val}
                                                 <li><a href="?edit_masters={$val.master_id}">{$val.master_title}</a></li>
                                                 {/foreach}
@@ -70,7 +70,7 @@
                                     <li><a><i class="fa fa-female"></i> Партнеры <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
                                             <li><a href="?new_partner">Добавить новый</a></li>
-                                            <li><a href="?partner_position">Изменить позицию</a></li>
+                                            <li><a href="?partners_position">Изменить позицию</a></li>
                                                 {foreach from=$posts_partner key=key item=val}
                                                 <li><a href="?edit_partners={$val.partner_id}">{$val.partner_title}</a></li>
                                                 {/foreach}

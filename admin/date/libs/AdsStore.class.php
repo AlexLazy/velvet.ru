@@ -72,9 +72,9 @@ class AdsStore
     {
         global $mysqli;
         
-        $all = $mysqli->select("SELECT * FROM ?_posts");
-        $masters = $mysqli->select("SELECT * FROM ?_masters");
-        $partners = $mysqli->select("SELECT * FROM ?_partners");
+        $all = $mysqli->select("SELECT * FROM ?_posts order by post_id");
+        $masters = $mysqli->select("SELECT * FROM ?_masters order by master_id");
+        $partners = $mysqli->select("SELECT * FROM ?_partners order by partner_id");
         
         foreach ($all as $value)
         {
@@ -205,7 +205,11 @@ class AdsStore
 
         self::getAllAdsFromDB();
         self::prepareForOut();
-
+        $positions = new Positions();
+        $positions->getDataFromDB();
+        $positions->converToSmarty();
+        
+        
         $smarty->display('admin_header.tpl');
         
         if (isset($_GET['new_post'])|| isset($_GET['edit_ads'])) {
@@ -214,8 +218,9 @@ class AdsStore
             $smarty->display('admin_masters.tpl');
         } elseif (isset($_GET['new_partner'])|| isset($_GET['edit_partners'])) {
             $smarty->display('admin_partners.tpl');
-        } elseif (isset($_GET['partner_position']) || isset($_GET['master_position']) || isset($_GET['post_position']))  {
+        } elseif (isset($_GET['partners_position']) || isset($_GET['masters_position']) || isset($_GET['posts_position']))  {
             $smarty->display('admin_positions.tpl');
+            $positions->editPosition();
         } else {
             $smarty->display('admin_main.tpl');
         }
