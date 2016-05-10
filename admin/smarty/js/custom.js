@@ -272,7 +272,8 @@ if (typeof NProgress != 'undefined') {
     $(document).ready(function() {
         $(".thumbnail").on("click", function () {
             $('#fake_post_img').remove();
-            $('#file').html('<input id="post_img" type="file" name="post_img" class="hidden">');
+            if($('#file')) $('#file').html('<input id="post_img" type="file" name="post_img" class="hidden">');
+            if($('#banner_file')) $('#banner_file').html('<input id="post_img" type="file" name="header_banner_img" class="hidden">');
             $("#post_img").on("change", function () {
                 $(".thumbnail").html("<img id='prev' src=' '>");
                 var file = this.files[0];
@@ -290,9 +291,11 @@ if (typeof NProgress != 'undefined') {
             });
         });
 
+        //Удаление картинки
         $(".close").on("click", function () {
             $('#post_img').remove();
-            $('#file').html('<input id="post_img" type="file" name="post_img" class="hidden">');
+            if ($('#file')) $('#file').html('<input id="post_img" type="file" name="post_img" class="hidden">');
+            if ($('#banner_file')) $('#banner_file').html('<input id="post_img" type="file" name="header_banner_img" class="hidden">');
             $('.thumbnail, .close, .miniature').fadeOut();
         });
     });

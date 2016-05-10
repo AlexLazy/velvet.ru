@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-09 11:08:27
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-10 14:59:47
          compiled from index.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -36,6 +36,9 @@
         <header>
             <nav class="navbar dark-bg" data-selector="nav">
                 <div class="container">
+                <?php $_from = $this->_tpl_vars['posts_header']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['v']):
+?>
                     <div class="col-sm-12 col-md-3 col-lg-2">
                         <a class="logo" href="/">
                             <img src="images/velvetlogo.png"alt="logo">
@@ -43,24 +46,34 @@
                     </div>
                     <div class="col-sm-12 col-md-9 col-lg-10">
                         <ul class="contacts">
-                            <li>Россия, г. Новосибирск, ул. Галущака, 2</li>
+                            <li><?php echo $this->_tpl_vars['v']['header_address']; ?>
+</li>
                             <li>
-                                <span class="tel">+7 (383) 29-990-29</span>
+                                <span class="tel"><?php echo $this->_tpl_vars['v']['header_phone1']; ?>
+</span>
                                 <br>
-                                <span class="tel">+7 (983) 313-06-46</span>
+                                <span class="tel"><?php echo $this->_tpl_vars['v']['header_phone2']; ?>
+</span>
                             </li>
 
                             <li>
-                                <a href="https://vk.com/velvetrussia"class="social" target="_blank">
+                                <a href="https://<?php echo $this->_tpl_vars['v']['header_social']; ?>
+"class="social" target="_blank">
                                     <img src="images/vk2.png" height="20" data-selector="img">
-                                    vk.com/velvetrussia
+                                    <?php echo $this->_tpl_vars['v']['header_social']; ?>
+
                                 </a>
                             </li>
                         </ul>
-                        <a href="#" class="banner col-md-6 hidden-sm hidden-xs">
-                            <img src="images/banner.jpg" alt="banner">
-                        </a>
+                        <?php if ($this->_tpl_vars['v']['header_banner_img']): ?>
+                            <a href="<?php echo $this->_tpl_vars['v']['header_banner_link']; ?>
+" class="banner col-md-6 hidden-sm hidden-xs">
+                                <img src="images/<?php echo $this->_tpl_vars['v']['header_banner_img']; ?>
+" alt="banner">
+                            </a>
+                        <?php endif; ?>
                     </div>
+                <?php endforeach; endif; unset($_from); ?>
                 </div>
                 <!-- Mobile mnu -->
                 <div class="pull-down">

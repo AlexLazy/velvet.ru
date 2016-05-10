@@ -22,6 +22,20 @@ if(isset($_POST['submit_post']) && isset($_FILES))
     $post->save();
 }
 
+if(isset($_POST['submit_header']) && isset($_FILES))
+{
+    // Проверяем загружен ли файл
+    if (is_uploaded_file($_FILES["header_banner_img"]["tmp_name"]))
+    {
+        // Если файл загружен успешно, перемещаем его
+        // из временной директории в конечную
+        move_uploaded_file($_FILES["header_banner_img"]["tmp_name"], '../images/' . $_FILES["header_banner_img"]["name"]);
+    }
+    $post = new Header($_POST);
+    $post->save();
+    
+}
+
 if(isset($_POST['submit_master']))
 {
     $post = new Masters($_POST);

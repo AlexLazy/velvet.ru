@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.0.10.10
 -- http://www.phpmyadmin.net
 --
--- Хост: 127.0.0.1
--- Время создания: Май 10 2016 г., 10:46
--- Версия сервера: 10.1.13-MariaDB
--- Версия PHP: 5.6.20
+-- Хост: 127.0.0.1:3306
+-- Время создания: Май 10 2016 г., 15:10
+-- Версия сервера: 5.5.45
+-- Версия PHP: 5.4.44
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- База данных: `velvet`
@@ -23,19 +23,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `vl_header`
+--
+
+CREATE TABLE IF NOT EXISTS `vl_header` (
+  `header_id` int(11) NOT NULL AUTO_INCREMENT,
+  `header_address` varchar(255) NOT NULL,
+  `header_phone1` varchar(20) NOT NULL,
+  `header_phone2` varchar(20) NOT NULL,
+  `header_social` varchar(255) NOT NULL,
+  `header_banner_img` text NOT NULL,
+  `header_banner_link` text NOT NULL,
+  PRIMARY KEY (`header_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `vl_header`
+--
+
+INSERT INTO `vl_header` (`header_id`, `header_address`, `header_phone1`, `header_phone2`, `header_social`, `header_banner_img`, `header_banner_link`) VALUES
+(1, 'Россия, г. Новосибирск, ул. Галущака, 2', '+7 (383) 29-990-29 ', '+7 (983) 313-06-46', 'vk.com/velvetrussia', 'banner.jpg', 'https://vk.com/velvetrussia');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `vl_masters`
 --
 
-CREATE TABLE `vl_masters` (
-  `master_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `vl_masters` (
+  `master_id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `master_title` varchar(100) NOT NULL,
   `master_fio` varchar(255) NOT NULL,
   `master_city` varchar(100) NOT NULL,
   `master_phone` varchar(50) NOT NULL,
   `master_mail` varchar(50) NOT NULL,
-  `master_certificate` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `master_certificate` varchar(100) NOT NULL,
+  PRIMARY KEY (`master_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `vl_masters`
@@ -53,8 +78,8 @@ INSERT INTO `vl_masters` (`master_id`, `date`, `master_title`, `master_fio`, `ma
 -- Структура таблицы `vl_partners`
 --
 
-CREATE TABLE `vl_partners` (
-  `partner_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `vl_partners` (
+  `partner_id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `partner_title` varchar(100) NOT NULL,
   `partner_first_name` varchar(100) NOT NULL,
@@ -64,8 +89,9 @@ CREATE TABLE `vl_partners` (
   `partner_company_name` varchar(255) NOT NULL,
   `partner_address` text NOT NULL,
   `partner_phone` varchar(50) NOT NULL,
-  `partner_mail` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `partner_mail` varchar(100) NOT NULL,
+  PRIMARY KEY (`partner_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Дамп данных таблицы `vl_partners`
@@ -82,13 +108,14 @@ INSERT INTO `vl_partners` (`partner_id`, `date`, `partner_title`, `partner_first
 -- Структура таблицы `vl_posts`
 --
 
-CREATE TABLE `vl_posts` (
-  `post_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `vl_posts` (
+  `post_id` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `post_title` varchar(255) CHARACTER SET utf8 NOT NULL,
   `post_text` text CHARACTER SET utf8 NOT NULL,
-  `post_img` text CHARACTER SET utf8 NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+  `post_img` text CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`post_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=100000000 ;
 
 --
 -- Дамп данных таблицы `vl_posts`
@@ -97,7 +124,7 @@ CREATE TABLE `vl_posts` (
 INSERT INTO `vl_posts` (`post_id`, `date`, `post_title`, `post_text`, `post_img`) VALUES
 (70, '2016-05-09 00:00:00', 'верхний_блок-абзац-2', 'Все наши технологи, преподающие курсы и мастер-классы прошли обучение  РЕКОНСТРУКЦИИ ВЕЛЬВЕТ для ресниц и бровей  непосредственно у британских специалистов по международной программе повышения квалификации лэшмэйкеров!', ''),
 (71, '2016-05-04 00:00:00', 'верхний_блок-абзац-3', 'На территории РФ  курсы Реконструкции ресниц и бровей Вельвет  «VELVET for L&B» проводятся согласно международному формату обучения.\r\n', ''),
-(80, '2016-05-10 09:54:25', 'презентация-слайд-1', '', 'Document-page-001.jpg'),
+(80, '2016-05-10 15:08:53', 'презентация-слайд-1', '', 'Document-page-001.jpg'),
 (82, '2016-05-10 09:54:41', 'презентация-слайд-2', '', 'Document-page-002.jpg'),
 (83, '2016-05-02 00:00:00', 'презентация-слайд-3', '', 'Document-page-003.jpg'),
 (84, '2016-05-01 00:00:00', 'презентация-слайд-4', '', 'Document-page-004.jpg'),
@@ -108,47 +135,6 @@ INSERT INTO `vl_posts` (`post_id`, `date`, `post_title`, `post_text`, `post_img`
 (89, '2016-05-17 00:00:00', 'нижний_блок-абзац-2', 'ВАЖНО! Наша компания – эксклюзивный представитель РЕКОНСТРУКЦИИ РЕСНИЦ И БРОВЕЙ VELVET FOR LASHES&BROWS в России! Мы сотрудничаем НАПРЯМУЮ с ЛОНДОНОМ! У нас НЕТ НАКРУТОК от столичных поставщиков! Поэтому НАШ ПРАЙС на продукт ПРЕМИУМ сегмента - МАКСИМАЛЬНО ВЫГОДЕН!\r\n', ''),
 (69, '0000-00-00 00:00:00', 'верхний_блок-абзац-1', 'Любишь инновации, любишь быть первым в любой сфере, обожаешь удивлять своих клиентов и понимаешь возможности неограниченных заработков с новинкой в бьюти индустрии, то не упусти шанс – пройди обучение новой британской услуге - РЕКОНСТРУКЦИЯ РЕСНИЦ И БРОВЕЙ VELVET FOR LASHES&BROWS! ', '');
 
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `vl_masters`
---
-ALTER TABLE `vl_masters`
-  ADD PRIMARY KEY (`master_id`);
-
---
--- Индексы таблицы `vl_partners`
---
-ALTER TABLE `vl_partners`
-  ADD PRIMARY KEY (`partner_id`);
-
---
--- Индексы таблицы `vl_posts`
---
-ALTER TABLE `vl_posts`
-  ADD PRIMARY KEY (`post_id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `vl_masters`
---
-ALTER TABLE `vl_masters`
-  MODIFY `master_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT для таблицы `vl_partners`
---
-ALTER TABLE `vl_partners`
-  MODIFY `partner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT для таблицы `vl_posts`
---
-ALTER TABLE `vl_posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100000000;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

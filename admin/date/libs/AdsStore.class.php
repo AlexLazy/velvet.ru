@@ -7,6 +7,7 @@ class AdsStore
     private $posts=[];
     private $masters = [];
     private $partners = [];
+    private $header='';
     
     public static function instance()
     {
@@ -16,20 +17,26 @@ class AdsStore
     
     private function addAds(Ads $post)
     {
-        if(!($this instanceof AdsStore)) die('AdsStore');
+        if(!($this instanceof AdsStore)) die();
         $this->posts[$post->getId()] = $post;
     }
     
     private function addMasters(Masters $post)
     {
-        if(!($this instanceof AdsStore)) die('AdsStore');
+        if(!($this instanceof AdsStore)) die();
         $this->masters[$post->getId()] = $post;
     }
     
     private function addPartners(Partners $post)
     {
-        if(!($this instanceof AdsStore)) die('AdsStore');
+        if(!($this instanceof AdsStore)) die();
         $this->partners[$post->getId()] = $post;
+    }
+
+    private function addHeader(Header $post)
+    {
+        if(!($this instanceof AdsStore)) die();
+        $this->header[$post->getId()] = $post;
     }
     
     private function deleteAds($id)
@@ -75,6 +82,7 @@ class AdsStore
         $all = $mysqli->select("SELECT * FROM ?_posts order by post_id");
         $masters = $mysqli->select("SELECT * FROM ?_masters order by master_id");
         $partners = $mysqli->select("SELECT * FROM ?_partners order by partner_id");
+        $header = $mysqli->select("SELECT * FROM ?_header");
         
         foreach ($all as $value)
         {
@@ -92,6 +100,12 @@ class AdsStore
         {
             $post = new Partners($value);
             self::addPartners($post);
+        }
+
+        foreach ($header as $value)
+        {
+            $post = new Header($value);
+            self::addHeader($post);
         }
         
         if (filter_input(INPUT_GET, 'delete_ads', FILTER_VALIDATE_INT) >= 0)
@@ -165,7 +179,16 @@ class AdsStore
                 }
             }
         }
-        
+
+        if (isset($_GET['edit_header']))
+        {
+            $fillAds = $this->header[1];
+            foreach ($fillAds->getObjVars() as $key => $value)//Заполнение полей формы
+            {
+                $smarty->assign($key, $value);
+            }
+        }
+
         if(isset($this->posts))
         {
             foreach ($this->posts as $post)
@@ -195,6 +218,16 @@ class AdsStore
             }
             $smarty->assign('posts_partner', $post_partner);
         }
+
+        if(isset($this->header))
+        {
+            foreach ($this->header as $post)
+            {
+                $post = get_object_vars($post);
+                $post_header[]= $post;
+            }
+            $smarty->assign('posts_header', $post_header);
+        }
         
         return self::$instance;    
     }
@@ -212,7 +245,9 @@ class AdsStore
         
         $smarty->display('admin_header.tpl');
         
-        if (isset($_GET['new_post'])|| isset($_GET['edit_ads'])) {
+        if (isset($_GET['edit_header'])) {
+            $smarty->display('admin_head.tpl');
+        } elseif (isset($_GET['new_post'])|| isset($_GET['edit_ads'])) {
             $smarty->display('admin_post.tpl');
         } elseif (isset($_GET['new_master']) || isset($_GET['edit_masters'])) {
             $smarty->display('admin_masters.tpl');
