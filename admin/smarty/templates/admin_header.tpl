@@ -31,9 +31,9 @@
 
                         <!-- menu profile quick info -->
                         <div class="profile">
-                            <div class="profile_pic">
+                            <a href="index.php" class="profile_pic">
                                 <img src="../images/velvetlogo.png" alt="..." class="img-circle profile_img">
-                            </div>
+                            </a>
                             <div class="profile_info">
                                 <span>Добро пожаловать,</span>
                                 <h2>Admin</h2>
