@@ -7,7 +7,7 @@
 		</thead>
 		{foreach from=$posts_title item=val}
 			<tr>
-				<td><a href="?edit_ads={$val.post_id}">{$val.post_title}</a></td>
+				<td><a href="?edit_ads={$val.post_id}" style="display:block">{$val.post_title}</a></td>
 			</tr>
 		{/foreach}
 	</table>
@@ -21,7 +21,7 @@
 		</thead>
 		{foreach from=$posts_master item=val}
 			<tr>
-				<td><a href="?edit_masters={$val.master_id}">{$val.master_title}</a></td>
+				<td><a href="?edit_masters={$val.master_id}" style="display:block">{$val.master_title}</a></td>
 			</tr>
 		{/foreach}
 	</table>
@@ -35,7 +35,7 @@
 		</thead>
 		{foreach from=$posts_master item=val}
 			<tr>
-				<td><a href="?edit_partners={$val.master_id}">{$val.master_title}</a></td>
+				<td><a href="?edit_partners={$val.master_id}" style="display:block">{$val.master_title}</a></td>
 			</tr>
 		{/foreach}
 	</table>
