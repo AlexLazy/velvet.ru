@@ -33,9 +33,9 @@
 				<th><i class="fa fa-female"></i> Партнеры</th>
 			</tr>
 		</thead>
-		{foreach from=$posts_master item=val}
+		{foreach from=$posts_partner item=val}
 			<tr>
-				<td><a href="?edit_partners={$val.master_id}" style="display:block">{$val.master_title}</a></td>
+				<td><a href="?edit_partners={$val.partner_id}" style="display:block">{$val.partner_title}</a></td>
 			</tr>
 		{/foreach}
 	</table>
