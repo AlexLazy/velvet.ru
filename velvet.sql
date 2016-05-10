@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 10 2016 г., 15:10
+-- Время создания: Май 10 2016 г., 17:17
 -- Версия сервера: 5.5.45
 -- Версия PHP: 5.4.44
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `vl_header` (
   `header_id` int(11) NOT NULL AUTO_INCREMENT,
+  `header_logo_img` text NOT NULL,
   `header_address` varchar(255) NOT NULL,
   `header_phone1` varchar(20) NOT NULL,
   `header_phone2` varchar(20) NOT NULL,
@@ -41,8 +42,8 @@ CREATE TABLE IF NOT EXISTS `vl_header` (
 -- Дамп данных таблицы `vl_header`
 --
 
-INSERT INTO `vl_header` (`header_id`, `header_address`, `header_phone1`, `header_phone2`, `header_social`, `header_banner_img`, `header_banner_link`) VALUES
-(1, 'Россия, г. Новосибирск, ул. Галущака, 2', '+7 (383) 29-990-29 ', '+7 (983) 313-06-46', 'vk.com/velvetrussia', 'banner.jpg', 'https://vk.com/velvetrussia');
+INSERT INTO `vl_header` (`header_id`, `header_logo_img`, `header_address`, `header_phone1`, `header_phone2`, `header_social`, `header_banner_img`, `header_banner_link`) VALUES
+(1, 'velvetlogo.png', 'Россия, г. Новосибирск, ул. Галущака, 2', '+7 (383) 29-990-29 ', '+7 (983) 313-06-46', 'vk.com/velvetrussia', 'banner.jpg', 'https://vk.com/velvetrussia');
 
 -- --------------------------------------------------------
 

@@ -270,14 +270,20 @@ if (typeof NProgress != 'undefined') {
 
     // thumbnail
     $(document).ready(function() {
+        var prefix;
+        if(window.location.search == '?edit_header=true'){
+            prefix = 'header_';
+        }else{
+            prefix = '';
+        }
         $(".thumbnail").on("click", function () {
-            $('#fake_post_img').remove();
-            if($('#file')) $('#file').html('<input id="post_img" type="file" name="post_img" class="hidden">');
-            if($('#banner_file')) $('#banner_file').html('<input id="post_img" type="file" name="header_banner_img" class="hidden">');
-            $("#post_img").on("change", function () {
-                $(".thumbnail").html("<img id='prev' src=' '>");
+            var elem = $(this).attr('for');
+            $('#'+elem+'_file').html('<input id="'+elem+'" type="file" name="'+prefix+elem+'" class="hidden">');
+            $("#post_img, #logo_img, #banner_img").on("change", function () {
+                var id = $(this).attr('id');
+                $("[for="+id+"]").html("<img id='"+id+"' src=' '>");
                 var file = this.files[0];
-                preview = document.querySelector('#prev');
+                preview = document.querySelector('#'+id);
                 var reader  = new FileReader();
 
                 reader.onloadend = function () {
@@ -293,10 +299,9 @@ if (typeof NProgress != 'undefined') {
 
         //Удаление картинки
         $(".close").on("click", function () {
-            $('#post_img').remove();
-            if ($('#file')) $('#file').html('<input id="post_img" type="file" name="post_img" class="hidden">');
-            if ($('#banner_file')) $('#banner_file').html('<input id="post_img" type="file" name="header_banner_img" class="hidden">');
-            $('.thumbnail, .close, .miniature').fadeOut();
+            var element = $(this).siblings('label').attr('for');
+            $(this).parent('.banner').fadeOut();
+            $('#'+element+'_file').html('<input id="'+element+'" type="file" name="'+prefix+element+'" class="hidden">');
         });
     });
 

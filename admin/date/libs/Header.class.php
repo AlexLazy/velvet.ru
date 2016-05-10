@@ -4,6 +4,7 @@
 class Header
 {
     public $header_id = '';
+    public $header_logo_img = '';
     public $header_address = '';
     public $header_phone1 = '';
     public $header_phone2 = '';
@@ -15,6 +16,7 @@ class Header
     public function __construct($post)
     {
         if(isset($post['header_id'])) $this->header_id=$post['header_id'];
+        if(isset($_FILES["header_logo_img"]["name"])) $this->header_logo_img = $_FILES["header_logo_img"]["name"];
         if(isset($_FILES["header_banner_img"]["name"])) $this->header_banner_img = $_FILES["header_banner_img"]["name"];
         foreach ($post as $key=>$val)
         {

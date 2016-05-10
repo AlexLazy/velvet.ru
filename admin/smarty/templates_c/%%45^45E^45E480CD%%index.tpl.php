@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-10 14:59:47
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-10 16:22:44
          compiled from index.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -40,9 +40,12 @@
     foreach ($_from as $this->_tpl_vars['v']):
 ?>
                     <div class="col-sm-12 col-md-3 col-lg-2">
+                    <?php if ($this->_tpl_vars['v']['header_logo_img']): ?>
                         <a class="logo" href="/">
-                            <img src="images/velvetlogo.png"alt="logo">
+                            <img src="images/<?php echo $this->_tpl_vars['v']['header_logo_img']; ?>
+"alt="logo">
                         </a>
+                    <?php endif; ?>
                     </div>
                     <div class="col-sm-12 col-md-9 col-lg-10">
                         <ul class="contacts">

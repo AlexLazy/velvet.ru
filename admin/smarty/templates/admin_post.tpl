@@ -16,7 +16,7 @@
             <textarea name="post_text" id="editor" style="width:100%;margin-bottom:20px">{$post_text}</textarea>
             <br />
             <div class="row">
-                <div class="col-xs-3">
+                <div class="col-xs-3 banner">
                     <h3 class='miniature'>Миниатюра</h3>
                     <div class='close'><i class="fa fa-close"></i></div>
                     <label for="post_img" class="thumbnail" style='cursor:pointer'>
@@ -26,12 +26,8 @@
                     </label>
                 </div>
             </div>
-            <div id="file">
-                {if $smarty.get.edit_ads}
-                    <input id="fake_post_img" type="hidden" name='post_img' value="{$post_img}">
-                {else}
-                    <input id="post_img" type="file" name="post_img" class="hidden">
-                {/if}
+            <div id="post_img_file">
+                <input id="fake_post_img" type="hidden" name='post_img' value="{$post_img}">
             </div>
             <input type="submit" value="Опубликовать" id="form_submit" name="submit_post" class="btn btn-success">
             {if isset($smarty.get.edit_ads)}

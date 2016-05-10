@@ -36,9 +36,11 @@
                 <div class="container">
                 {foreach from=$posts_header item=v}
                     <div class="col-sm-12 col-md-3 col-lg-2">
+                    {if $v.header_logo_img}
                         <a class="logo" href="/">
-                            <img src="images/velvetlogo.png"alt="logo">
+                            <img src="images/{$v.header_logo_img}"alt="logo">
                         </a>
+                    {/if}
                     </div>
                     <div class="col-sm-12 col-md-9 col-lg-10">
                         <ul class="contacts">
