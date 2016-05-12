@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-12 16:23:26
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-12 16:35:36
          compiled from admin_head.tpl */ ?>
 <form class="col-md-12 col-sm-12 col-xs-12" method="post" enctype="multipart/form-data">
     <div class="x_panel">
@@ -41,7 +41,7 @@
 " name="header_social" placeholder="Ссылка на вк" style="width:20%"><br>
             <small>Ссылка на YouTube</small>
             <input type="text" class="form-control" value="<?php echo $this->_tpl_vars['header_social_tube']; ?>
-" name="header_social" placeholder="Ссылка на YouTube" style="width:20%"><br>
+" name="header_social_tube" placeholder="Ссылка на YouTube" style="width:20%"><br>
             <div class="row">
                 <div class="col-xs-6 banner">
                     <h3 class='miniature'>Баннер</h3>

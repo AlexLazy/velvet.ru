@@ -32,7 +32,7 @@
             <small>Ссылка на вк</small>
             <input type="text" class="form-control" value="{$header_social}" name="header_social" placeholder="Ссылка на вк" style="width:20%"><br>
             <small>Ссылка на YouTube</small>
-            <input type="text" class="form-control" value="{$header_social_tube}" name="header_social" placeholder="Ссылка на YouTube" style="width:20%"><br>
+            <input type="text" class="form-control" value="{$header_social_tube}" name="header_social_tube" placeholder="Ссылка на YouTube" style="width:20%"><br>
             <div class="row">
                 <div class="col-xs-6 banner">
                     <h3 class='miniature'>Баннер</h3>

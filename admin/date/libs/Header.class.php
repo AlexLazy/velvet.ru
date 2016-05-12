@@ -9,6 +9,7 @@ class Header
     public $header_phone1 = '';
     public $header_phone2 = '';
     public $header_social = '';
+    public $header_social_tube = '';
     public $header_banner_img = '';
     public $header_banner_link = '';
 
