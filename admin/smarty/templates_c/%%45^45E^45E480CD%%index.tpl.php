@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-12 16:23:49
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-12 18:49:27
          compiled from index.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -73,6 +73,16 @@
                                     YouTube
                                 </a>
                             </li>
+                            <li class="lang">
+                                <a href="#">
+                                    <img src="images/ru.png" alt="ru">
+                                </a>
+                            </li>
+                            <li class="lang">
+                                <a href="#">
+                                    <img src="images/en.png" alt="en">
+                                </a>
+                            </li>
                         </ul>
                         <?php if ($this->_tpl_vars['v']['header_banner_img']): ?>
                             <a href="<?php echo $this->_tpl_vars['v']['header_banner_link']; ?>
@@ -81,25 +91,24 @@
 " alt="banner">
                             </a>
                         <?php endif; ?>
+                        <!-- Mobile mnu -->
+                        <div class="pull-down">
+                            <button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse  navMenuCollapse">
+                            <!-- Nav tabs -->
+                            <ul class="col-md-5 col-xs-12 nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Главная</a></li>
+                                <li role="presentation"><a href="#master" aria-controls="master" role="tab" data-toggle="tab">Мастера</a></li>
+                                <li role="presentation"><a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Представители</a></li>
+                            </ul>
+                        </div>
                     </div>
                 <?php endforeach; endif; unset($_from); ?>
-                    <!-- Mobile mnu -->
-                    <div class="pull-down">
-                        <button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse  navMenuCollapse">
-
-                        <!-- Nav tabs -->
-                        <ul class="col-md-5 col-xs-12 nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Главная</a></li>
-                            <li role="presentation"><a href="#master" aria-controls="master" role="tab" data-toggle="tab">Мастера</a></li>
-                            <li role="presentation"><a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Представители</a></li>
-                        </ul>
-                    </div>
                 </div>
             </nav>
         </header>

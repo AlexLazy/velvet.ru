@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-12 16:35:36
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-12 17:52:20
          compiled from admin_head.tpl */ ?>
 <form class="col-md-12 col-sm-12 col-xs-12" method="post" enctype="multipart/form-data">
     <div class="x_panel">

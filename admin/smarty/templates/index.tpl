@@ -62,6 +62,16 @@
                                     YouTube
                                 </a>
                             </li>
+                            <li class="lang">
+                                <a href="#">
+                                    <img src="images/ru.png" alt="ru">
+                                </a>
+                            </li>
+                            <li class="lang">
+                                <a href="#">
+                                    <img src="images/en.png" alt="en">
+                                </a>
+                            </li>
                         </ul>
                         {if $v.header_banner_img}
                             <a href="{$v.header_banner_link}" class="banner col-md-6 hidden-sm hidden-xs">
