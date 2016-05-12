@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-10 15:46:44
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-12 11:28:23
          compiled from admin_header.tpl */ ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,9 +33,9 @@
 
                         <!-- menu profile quick info -->
                         <div class="profile">
-                            <div class="profile_pic">
+                            <a href="index.php" class="profile_pic">
                                 <img src="../images/velvetlogo.png" alt="..." class="img-circle profile_img">
-                            </div>
+                            </a>
                             <div class="profile_info">
                                 <span>Добро пожаловать,</span>
                                 <h2>Admin</h2>

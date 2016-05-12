@@ -3152,8 +3152,7 @@ header .logo img {
 	width: 100%;
 }
 header li {
-	margin-left: 10px;
-	margin-right: 10px;
+
 }
 header .contacts {
 	margin-top: 20px;
@@ -3163,7 +3162,7 @@ header .contacts li {
 	padding-left: 30px;
 }
 header .social:hover {
-	color: #00c0ff;
+	color: #d12d8d;
 }
 
 header .banner {
@@ -3178,7 +3177,7 @@ header .banner img {
 	background-color: #000;
 }
 .nav-tabs {
-	top: -40px;
+	top: -25px;
 	background-color: transparent;
 	color: #fff;
 	border-bottom: none;
@@ -3189,7 +3188,6 @@ header .banner img {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-	background-color: #000;
 	border: none;
 }
 .nav-tabs > li > a:hover {
@@ -3214,9 +3212,15 @@ header .banner img {
 .partners ul {
 	margin-bottom: 30px;
 }
+.navbar .nav li a:hover,
+.navbar .nav li.active a {color:#d12d8d}
+td strong {color:#d12d8d}
 @media (max-width: 1200px) {
 	.nav-tabs {
-		top: -65px;
+		right: -20px;
+	}
+	.nav-tabs li {
+		margin-left: 0;
 	}
 }
 @media (max-width: 992px) {
@@ -3225,7 +3229,8 @@ header .banner img {
 		padding-left: 0;
 	}
 	.nav-tabs {
-		top: -40px;
+		right: 0;
+		top: 20px;
 	}
 	.nav-tabs li {
 		display: block;

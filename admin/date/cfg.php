@@ -13,7 +13,7 @@ require_once (ABSPATH . 'smarty/libs/Smarty.class.php');
 $smarty = new Smarty();
 
 $smarty->compile_check = true;
-$smarty->debugging = false;
+$smarty->debugging = 0;
 
 $smarty->template_dir = ABSPATH . 'smarty/templates';
 $smarty->compile_dir = ABSPATH . 'smarty/templates_c';

@@ -4,9 +4,9 @@
 class AdsStore
 {
     private static $instance=NULL;
-    private $posts=[];
-    private $masters = [];
-    private $partners = [];
+    private $posts= array();
+    private $masters = array();
+    private $partners = array();
     private $header='';
     
     public static function instance()
@@ -205,8 +205,34 @@ class AdsStore
             {
                 $post = get_object_vars($post);
                 $post_master[]= $post;
+                $list_master[$post['master_city']][] = $post;
+            }
+            foreach ($this->partners as $post)
+            {
+                $post = get_object_vars($post);
+                $list_master[$post['partner_city']][] = $post;
             }
             $smarty->assign('posts_master', $post_master);
+            ksort($list_master);
+            foreach ($list_master as $k => $v) {
+                foreach ($v as $k1 => $v1) {
+                    foreach ($v1 as $key => $value) {
+                        if ($key == 'partner_fio') {
+                            $tmp_list_master[$k][$k1]['fio'] = $value;
+                        } elseif ($key == 'master_fio'){
+                            $tmp_list_master[$k][$k1]['fio'] = $value;
+                        } else {
+                            $tmp_list_master[$k][$k1][$key] = $value;
+                        }
+                    }
+                }
+            }
+            foreach ($tmp_list_master as &$v1) {
+                usort($v1, function($a, $b){
+                    return strcmp($a["fio"], $b["fio"]);
+                });
+            }
+            $smarty->assign('list_master', $tmp_list_master);
         }
         
         if(isset($this->partners))
@@ -215,10 +241,17 @@ class AdsStore
             {
                 $post = get_object_vars($post);
                 $post_partner[]= $post;
+                $list_partner[$post['partner_city']][] = $post;
             }
             $smarty->assign('posts_partner', $post_partner);
+            ksort($list_partner);
+            foreach ($list_partner as &$v1) {
+                usort($v1, function($a, $b){
+                    return strcmp($a["partner_fio"], $b["partner_fio"]);
+                });
+            }
+            $smarty->assign('list_partner', $list_partner);
         }
-
         if(isset($this->header))
         {
             foreach ($this->header as $post)

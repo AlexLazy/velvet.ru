@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-10 16:22:44
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-12 16:23:49
          compiled from index.tpl */ ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +36,7 @@
         <header>
             <nav class="navbar dark-bg" data-selector="nav">
                 <div class="container">
-                <?php $_from = $this->_tpl_vars['posts_header']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+                    <?php $_from = $this->_tpl_vars['posts_header']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['v']):
 ?>
                     <div class="col-sm-12 col-md-3 col-lg-2">
@@ -66,6 +66,12 @@
                                     <?php echo $this->_tpl_vars['v']['header_social']; ?>
 
                                 </a>
+                                <br>
+                                <a href="https://<?php echo $this->_tpl_vars['v']['header_social_tube']; ?>
+"class="social" target="_blank">
+                                    <img src="images/youtube.png" height="20" data-selector="img">
+                                    YouTube
+                                </a>
                             </li>
                         </ul>
                         <?php if ($this->_tpl_vars['v']['header_banner_img']): ?>
@@ -77,24 +83,23 @@
                         <?php endif; ?>
                     </div>
                 <?php endforeach; endif; unset($_from); ?>
-                </div>
-                <!-- Mobile mnu -->
-                <div class="pull-down">
-                    <button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse  navMenuCollapse">
+                    <!-- Mobile mnu -->
+                    <div class="pull-down">
+                        <button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse  navMenuCollapse">
 
-                    <!-- Nav tabs -->
-                    <ul class="col-md-5 col-xs-12 nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Главная</a></li>
-                        <li role="presentation"><a href="#master" aria-controls="master" role="tab" data-toggle="tab">Мастера</a></li>
-                        <li role="presentation"><a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Партнеры</a></li>
-                    </ul>
-
+                        <!-- Nav tabs -->
+                        <ul class="col-md-5 col-xs-12 nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Главная</a></li>
+                            <li role="presentation"><a href="#master" aria-controls="master" role="tab" data-toggle="tab">Мастера</a></li>
+                            <li role="presentation"><a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Представители</a></li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </header>
@@ -135,28 +140,49 @@
                 <div role="tabpanel" class="tab-pane fade" id="master">
                     <!-- CONTENT CENTER BLOCK -->
                     <section  class="master">
-                        <?php $_from = $this->_tpl_vars['posts_master']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['v']):
-?>
-                            <ul>
-                                <?php $_from = $this->_tpl_vars['v']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+                        <div class="table-responsive">
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>ФИО</th>
+                                    <th>Контакты</th>
+                                    <th>№ Сертификата</th>
+                                </tr>
+                                <?php $_from = $this->_tpl_vars['list_master']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['k'] => $this->_tpl_vars['v1']):
 ?>
-                                    <?php if ($this->_tpl_vars['k'] != 'master_title' && $this->_tpl_vars['k'] != 'date'): ?> 
-                                        <?php if ($this->_tpl_vars['k'] != 'master_id'): ?>
-                                            <?php if ($this->_tpl_vars['k'] != 'master_mail'): ?>
-                                                <li><?php echo $this->_tpl_vars['v1']; ?>
-</li>
-                                            <?php else: ?>
-                                                <li><a href="mailto:<?php echo $this->_tpl_vars['v1']; ?>
-"><?php echo $this->_tpl_vars['v1']; ?>
-</a></li>
-                                            <?php endif; ?> 
-                                        <?php endif; ?>
-                                    <?php endif; ?> 
+                                    <tr>
+                                        <td colspan="3"><strong><?php echo $this->_tpl_vars['k']; ?>
+</strong></td>
+                                    </tr>
+                                    <?php $_from = $this->_tpl_vars['v1']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['v']):
+?>
+                                        <tr>
+                                            <td><?php echo $this->_tpl_vars['v']['fio']; ?>
+</td>
+                                            <td>
+                                                <?php if (! empty ( $this->_tpl_vars['v']['master_phone'] )): ?><?php echo $this->_tpl_vars['v']['master_phone']; ?>
+<br><?php endif; ?>
+                                                <?php if (! empty ( $this->_tpl_vars['v']['master_mail'] )): ?><?php echo $this->_tpl_vars['v']['master_mail']; ?>
+<?php endif; ?>
+                                                <?php if (! empty ( $this->_tpl_vars['v']['partner_phone'] )): ?><?php echo $this->_tpl_vars['v']['partner_phone']; ?>
+<br><?php endif; ?>
+                                                <?php if (! empty ( $this->_tpl_vars['v']['partner_mail'] )): ?><?php echo $this->_tpl_vars['v']['partner_mail']; ?>
+<br><?php endif; ?>
+                                                <?php if (! empty ( $this->_tpl_vars['v']['partner_company_name'] )): ?><?php echo $this->_tpl_vars['v']['partner_company_name']; ?>
+<br><?php endif; ?>
+                                                <?php if (! empty ( $this->_tpl_vars['v']['partner_address'] )): ?><?php echo $this->_tpl_vars['v']['partner_address']; ?>
+<?php endif; ?>
+                                            </td>
+                                            <td><?php echo $this->_tpl_vars['v']['master_certificate']; ?>
+<?php echo $this->_tpl_vars['v']['partner_certificate']; ?>
+</td>
+                                        </tr>
+                                    <?php endforeach; endif; unset($_from); ?>
                                 <?php endforeach; endif; unset($_from); ?>
-                            </ul>
-                        <?php endforeach; endif; unset($_from); ?>
+
+                            </table>
+                        </div>
                     </section>
                 </div>
 
@@ -165,39 +191,53 @@
 
                     <!-- CONTENT CENTER BLOCK -->
                     <section  class="partners">
-                        <?php $_from = $this->_tpl_vars['posts_partner']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
-    foreach ($_from as $this->_tpl_vars['v']):
-?>
-                            <ul>
-                                <?php $_from = $this->_tpl_vars['v']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+                        <div class="table-responsive">
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>ФИО</th>
+                                    <th>Контакты</th>
+                                    <th>№ Сертификата</th>
+                                </tr>
+                                <?php $_from = $this->_tpl_vars['list_partner']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['k'] => $this->_tpl_vars['v1']):
 ?>
-                                    <?php if ($this->_tpl_vars['k'] != 'partner_title' && $this->_tpl_vars['k'] != 'date'): ?> 
-                                        <?php if ($this->_tpl_vars['k'] != 'partner_id'): ?>
-                                            <?php if ($this->_tpl_vars['k'] != 'partner_mail'): ?>
-                                                <li><?php echo $this->_tpl_vars['v1']; ?>
-</li>
-                                            <?php else: ?>
-                                                <li><a href="mailto:<?php echo $this->_tpl_vars['v1']; ?>
-"><?php echo $this->_tpl_vars['v1']; ?>
-</a></li>
-                                            <?php endif; ?> 
-                                        <?php endif; ?> 
-                                    <?php endif; ?> 
-                                <?php endforeach; endif; unset($_from); ?>
-                            </ul>
-                        <?php endforeach; endif; unset($_from); ?>
-                    </section>
+                                    <tr>
+                                        <td colspan="3"><strong><?php echo $this->_tpl_vars['k']; ?>
+</strong></td>
+                                    </tr>
+                                    <?php $_from = $this->_tpl_vars['v1']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['v']):
+?>
+                                        <tr>
+                                            <td><?php echo $this->_tpl_vars['v']['partner_fio']; ?>
+</td>
+                                            <td>
+                                                <?php if (! empty ( $this->_tpl_vars['v']['partner_phone'] )): ?><?php echo $this->_tpl_vars['v']['partner_phone']; ?>
+<br><?php endif; ?>
+                                                <?php if (! empty ( $this->_tpl_vars['v']['partner_mail'] )): ?><?php echo $this->_tpl_vars['v']['partner_mail']; ?>
+<br><?php endif; ?>
+                                                <?php if (! empty ( $this->_tpl_vars['v']['partner_company_name'] )): ?><?php echo $this->_tpl_vars['v']['partner_company_name']; ?>
+<br><?php endif; ?>
+                                                <?php if (! empty ( $this->_tpl_vars['v']['partner_address'] )): ?><?php echo $this->_tpl_vars['v']['partner_address']; ?>
+<?php endif; ?>
+                                            </td>
+                                            <td><?php echo $this->_tpl_vars['v']['partner_certificate']; ?>
+</td>
+                                        </tr>
+                                    <?php endforeach; endif; unset($_from); ?>
+                            <?php endforeach; endif; unset($_from); ?>
+                        </table>
+                    </div>    
+                </section>
 
-                </div>
             </div>
+        </div>
         </div>
         <!-- FOOTER -->
         <!-- JavaScript --> 
         <script src="scripts/jquery-1.11.2.min.js"></script> 
-        <script src="scripts/bootstrap.min.js"></script> 
-        <script src="scripts/jquery.smooth-scroll.min.js"></script> 
+        <script src="scripts/bootstrap.min.js"></script>
         <script src="scripts/jquery.magnific-popup.min.js"></script>
         <script src="scripts/custom.js"></script>
-    </body>
+        </body>
 </html>

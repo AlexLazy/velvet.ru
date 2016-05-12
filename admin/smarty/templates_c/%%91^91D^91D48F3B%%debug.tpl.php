@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.25-dev, created on 2016-05-09 20:29:42
-         compiled from file:C:%5Cxampp%5Chtdocs%5Cvelvet%5Cadmin%5Csmarty%5Clibs%5Cdebug.tpl */ ?>
+<?php /* Smarty version 2.6.25-dev, created on 2016-05-11 23:29:49
+         compiled from file:C:%5Cxampp%5Chtdocs%5Cvelv%5Cadmin%5Csmarty%5Clibs%5Cdebug.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'assign_debug_info', 'file:C:\\xampp\\htdocs\\velvet\\admin\\smarty\\libs\\debug.tpl', 3, false),array('function', 'cycle', 'file:C:\\xampp\\htdocs\\velvet\\admin\\smarty\\libs\\debug.tpl', 119, false),array('modifier', 'escape', 'file:C:\\xampp\\htdocs\\velvet\\admin\\smarty\\libs\\debug.tpl', 102, false),array('modifier', 'string_format', 'file:C:\\xampp\\htdocs\\velvet\\admin\\smarty\\libs\\debug.tpl', 105, false),array('modifier', 'debug_print_var', 'file:C:\\xampp\\htdocs\\velvet\\admin\\smarty\\libs\\debug.tpl', 121, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'assign_debug_info', 'file:C:\\xampp\\htdocs\\velv\\admin\\smarty\\libs\\debug.tpl', 3, false),array('function', 'cycle', 'file:C:\\xampp\\htdocs\\velv\\admin\\smarty\\libs\\debug.tpl', 119, false),array('modifier', 'escape', 'file:C:\\xampp\\htdocs\\velv\\admin\\smarty\\libs\\debug.tpl', 102, false),array('modifier', 'string_format', 'file:C:\\xampp\\htdocs\\velv\\admin\\smarty\\libs\\debug.tpl', 105, false),array('modifier', 'debug_print_var', 'file:C:\\xampp\\htdocs\\velv\\admin\\smarty\\libs\\debug.tpl', 121, false),)), $this); ?>
 <?php echo smarty_function_assign_debug_info(array(), $this);?>
 
 <?php ob_start(); ?>

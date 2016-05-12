@@ -4,7 +4,8 @@ if (!$_SESSION['check']) {
     header('Location: login.php');
 }
 error_reporting(E_ALL | E_STRICT);
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
+
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 require_once (ABSPATH . 'date/cfg.php');//настройки

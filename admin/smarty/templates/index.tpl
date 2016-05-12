@@ -34,7 +34,7 @@
         <header>
             <nav class="navbar dark-bg" data-selector="nav">
                 <div class="container">
-                {foreach from=$posts_header item=v}
+                    {foreach from=$posts_header item=v}
                     <div class="col-sm-12 col-md-3 col-lg-2">
                     {if $v.header_logo_img}
                         <a class="logo" href="/">
@@ -56,6 +56,11 @@
                                     <img src="images/vk2.png" height="20" data-selector="img">
                                     {$v.header_social}
                                 </a>
+                                <br>
+                                <a href="https://{$v.header_social_tube}"class="social" target="_blank">
+                                    <img src="images/youtube.png" height="20" data-selector="img">
+                                    YouTube
+                                </a>
                             </li>
                         </ul>
                         {if $v.header_banner_img}
@@ -65,24 +70,23 @@
                         {/if}
                     </div>
                 {/foreach}
-                </div>
-                <!-- Mobile mnu -->
-                <div class="pull-down">
-                    <button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse  navMenuCollapse">
+                    <!-- Mobile mnu -->
+                    <div class="pull-down">
+                        <button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse  navMenuCollapse">
 
-                    <!-- Nav tabs -->
-                    <ul class="col-md-5 col-xs-12 nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Главная</a></li>
-                        <li role="presentation"><a href="#master" aria-controls="master" role="tab" data-toggle="tab">Мастера</a></li>
-                        <li role="presentation"><a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Партнеры</a></li>
-                    </ul>
-
+                        <!-- Nav tabs -->
+                        <ul class="col-md-5 col-xs-12 nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Главная</a></li>
+                            <li role="presentation"><a href="#master" aria-controls="master" role="tab" data-toggle="tab">Мастера</a></li>
+                            <li role="presentation"><a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Представители</a></li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </header>
@@ -116,21 +120,35 @@
                 <div role="tabpanel" class="tab-pane fade" id="master">
                     <!-- CONTENT CENTER BLOCK -->
                     <section  class="master">
-                        {foreach from=$posts_master item=v}
-                            <ul>
-                                {foreach from=$v key=k item=v1}
-                                    {if $k != 'master_title' && $k != 'date'} 
-                                        {if $k ne 'master_id'}
-                                            {if $k ne 'master_mail'}
-                                                <li>{$v1}</li>
-                                            {else}
-                                                <li><a href="mailto:{$v1}">{$v1}</a></li>
-                                            {/if} 
-                                        {/if}
-                                    {/if} 
+                        <div class="table-responsive">
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>ФИО</th>
+                                    <th>Контакты</th>
+                                    <th>№ Сертификата</th>
+                                </tr>
+                                {foreach from=$list_master key=k item=v1}
+                                    <tr>
+                                        <td colspan="3"><strong>{$k}</strong></td>
+                                    </tr>
+                                    {foreach from=$v1 item=v}
+                                        <tr>
+                                            <td>{$v.fio}</td>
+                                            <td>
+                                                {if !empty($v.master_phone)}{$v.master_phone}<br>{/if}
+                                                {if !empty($v.master_mail)}{$v.master_mail}{/if}
+                                                {if !empty($v.partner_phone)}{$v.partner_phone}<br>{/if}
+                                                {if !empty($v.partner_mail)}{$v.partner_mail}<br>{/if}
+                                                {if !empty($v.partner_company_name)}{$v.partner_company_name}<br>{/if}
+                                                {if !empty($v.partner_address)}{$v.partner_address}{/if}
+                                            </td>
+                                            <td>{$v.master_certificate}{$v.partner_certificate}</td>
+                                        </tr>
+                                    {/foreach}
                                 {/foreach}
-                            </ul>
-                        {/foreach}
+
+                            </table>
+                        </div>
                     </section>
                 </div>
 
@@ -139,32 +157,42 @@
 
                     <!-- CONTENT CENTER BLOCK -->
                     <section  class="partners">
-                        {foreach from=$posts_partner item=v}
-                            <ul>
-                                {foreach from=$v key=k item=v1}
-                                    {if $k != 'partner_title' && $k != 'date'} 
-                                        {if $k ne 'partner_id'}
-                                            {if $k ne 'partner_mail'}
-                                                <li>{$v1}</li>
-                                            {else}
-                                                <li><a href="mailto:{$v1}">{$v1}</a></li>
-                                            {/if} 
-                                        {/if} 
-                                    {/if} 
-                                {/foreach}
-                            </ul>
-                        {/foreach}
-                    </section>
+                        <div class="table-responsive">
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>ФИО</th>
+                                    <th>Контакты</th>
+                                    <th>№ Сертификата</th>
+                                </tr>
+                                {foreach from=$list_partner key=k item=v1}
+                                    <tr>
+                                        <td colspan="3"><strong>{$k}</strong></td>
+                                    </tr>
+                                    {foreach from=$v1 item=v}
+                                        <tr>
+                                            <td>{$v.partner_fio}</td>
+                                            <td>
+                                                {if !empty($v.partner_phone)}{$v.partner_phone}<br>{/if}
+                                                {if !empty($v.partner_mail)}{$v.partner_mail}<br>{/if}
+                                                {if !empty($v.partner_company_name)}{$v.partner_company_name}<br>{/if}
+                                                {if !empty($v.partner_address)}{$v.partner_address}{/if}
+                                            </td>
+                                            <td>{$v.partner_certificate}</td>
+                                        </tr>
+                                    {/foreach}
+                            {/foreach}
+                        </table>
+                    </div>    
+                </section>
 
-                </div>
             </div>
+        </div>
         </div>
         <!-- FOOTER -->
         <!-- JavaScript --> 
         <script src="scripts/jquery-1.11.2.min.js"></script> 
-        <script src="scripts/bootstrap.min.js"></script> 
-        <script src="scripts/jquery.smooth-scroll.min.js"></script> 
+        <script src="scripts/bootstrap.min.js"></script>
         <script src="scripts/jquery.magnific-popup.min.js"></script>
         <script src="scripts/custom.js"></script>
-    </body>
+        </body>
 </html>

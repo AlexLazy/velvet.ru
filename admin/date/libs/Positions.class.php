@@ -2,9 +2,9 @@
 
 class Positions
 {
-    public $masters_position = [];
-    public $partners_position = [];
-    public $posts_position = [];
+    public $masters_position = array();
+    public $partners_position = array();
+    public $posts_position = array();
     
     public function getDataFromDB()
     {

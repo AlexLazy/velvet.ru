@@ -6,8 +6,7 @@ class Partners
     public $partner_id = '';
     public $date = '';
     public $partner_title = '';
-    public $partner_first_name = '';
-    public $partner_last_name = '';
+    public $partner_fio = '';
     public $partner_city = '';
     public $partner_certificate = '';
     public $partner_company_name = '';
@@ -38,8 +37,7 @@ class Partners
     }
     
     public function getId() { return $this->partner_id; }
-    public function getFirstName() { return $this->partner_first_name; }
-    public function getLasttName() { return $this->partner_last_name; }
+    public function getFIO() { return $this->partner_first_name; }
     public function getCity() { return $this->partner_city; }
     public function getCertificate() { return $this->partner_certificate; }
     public function getCompanyName() { return $this->partner_company_name; }

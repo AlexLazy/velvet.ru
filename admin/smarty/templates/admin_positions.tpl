@@ -39,7 +39,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>id элемента</th>
                         <th>Заголовок</th>
                         <th>Действия</th>
