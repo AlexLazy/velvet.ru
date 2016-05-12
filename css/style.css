@@ -3177,7 +3177,8 @@ header .banner img {
 	background-color: #000;
 }
 .nav-tabs {
-	top: -25px;
+	top: 60px;
+	right: 90px;
 	background-color: transparent;
 	color: #fff;
 	border-bottom: none;
@@ -3217,9 +3218,11 @@ header .banner img {
 td strong {color:#d12d8d}
 @media (max-width: 1200px) {
 	.nav-tabs {
-		right: -20px;
+		top: 40px;
+		right: 70px;
 	}
-	.nav-tabs li {
+	.nav-tabs li a {
+		padding: 0 !important;
 		margin-left: 0;
 	}
 }

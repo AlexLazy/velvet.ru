@@ -68,25 +68,24 @@
                                 <img src="images/{$v.header_banner_img}" alt="banner">
                             </a>
                         {/if}
+                        <!-- Mobile mnu -->
+                        <div class="pull-down">
+                            <button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse  navMenuCollapse">
+                            <!-- Nav tabs -->
+                            <ul class="col-md-5 col-xs-12 nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Главная</a></li>
+                                <li role="presentation"><a href="#master" aria-controls="master" role="tab" data-toggle="tab">Мастера</a></li>
+                                <li role="presentation"><a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Представители</a></li>
+                            </ul>
+                        </div>
                     </div>
                 {/foreach}
-                    <!-- Mobile mnu -->
-                    <div class="pull-down">
-                        <button class="round-toggle navbar-toggle menu-collapse-btn collapsed" data-toggle="collapse" data-target=".navMenuCollapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse  navMenuCollapse">
-
-                        <!-- Nav tabs -->
-                        <ul class="col-md-5 col-xs-12 nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Главная</a></li>
-                            <li role="presentation"><a href="#master" aria-controls="master" role="tab" data-toggle="tab">Мастера</a></li>
-                            <li role="presentation"><a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Представители</a></li>
-                        </ul>
-                    </div>
                 </div>
             </nav>
         </header>
